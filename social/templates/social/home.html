@@ -28,24 +28,8 @@
           </div>
           <button type='submit' class='btn btn-default'>Post</button>
         </form>
-      </div>
-    </div>
-  </div>
-
-  <!-- Search box -->
-  <div class='col-xs-2'>
-    <div class='well'>
-      <form action="{% url 'social:home' %}" method="post" id='search-bar'>
-        {% csrf_token %}
-        <div class='form-group'>
-          <input type='text' class='form-control' name='search_terms' required placeholder='Search in posts...'>
-        </div>
-        <button type='submit' class='btn btn-primary'>Search</button>
-      </form>
-      <a class='btn btn-success' href="{% url 'social:home' %}">Show all</a>
-    </div>
-	<!-- Added: list of hashtags-->
-	<div>
+			<!-- Added: list of hashtags-->
+	
 		<p>The following list shows the hashtags that can be used to link a post with a project of the Network Institute.
 		Clicking on the hashtag (if underlined) will show the project description.</p>
 		<ul> 
@@ -107,7 +91,24 @@
 		<li><a href="http://w4ra.org/" target="_blank">#W4RA</a></li>
 		<li><a href="https://www.digivaardigdigiveilig.nl/" target="_blank">#WomenICT</a></li>
 		</ul>
+  
+      </div>
+    </div>
   </div>
+
+  <!-- Search box -->
+  <div class='col-xs-2'>
+    <div class='well'>
+      <form action="{% url 'social:home' %}" method="post" id='search-bar'>
+        {% csrf_token %}
+        <div class='form-group'>
+          <input type='text' class='form-control' name='search_terms' required placeholder='Search in posts...'>
+        </div>
+        <button type='submit' class='btn btn-primary'>Search</button>
+      </form>
+      <a class='btn btn-success' href="{% url 'social:home' %}">Show all</a>
+    </div>
+
 </div>
 
       <!-- Previous posts container -->
