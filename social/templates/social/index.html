@@ -1,21 +1,20 @@
 <html>
   <head>
     {% load staticfiles %}
-    <title> Welcome to Social! </title>
+    <title> The Network Institute forum! </title>
     <link rel="stylesheet" href="{% static 'social/bootstrap-3.3.6-dist/css/bootstrap.css' %}"></link>
     <link rel="stylesheet" href="{% static 'social/bootstrap-3.3.6-dist/css/bootstrap-theme.css' %}"></link>
   </head>
   <body role='document'>
     <div class="container">
       <div class='jumbotron'>
-        <h1> Welcome to Social, the least useful social network! </h1>
+        <h1> Welcome to the chatroom about the Network Institute!</h1>
       </div>
       <div class='row'>
         <div class='col-xs-8 panel panel-default'>
           <div class='panel-body'>
-            <p> Social is a minimalistic social network that allows you to share
-            writings and pictures with the world. Don't bother with friends, share
-            with everyone!
+            <p> On this forum, you can give your opinion about the projects of the Network Institute. On this site you can track how many people are posting. 
+			Also, a sentiment analysis is performed on these posts. What project is the most populair on this moment?
             </p>
           </div>
         </div>
@@ -33,7 +32,7 @@
               <input type="password"  class="form-control"  required name="password" id="password-input"> 
             </div>
             <button type="submit" class="btn btn-primary">Log in</button>
-			<a href="{% url 'social:sign_up' %}" >Or sign up!</a>
+			<a href="{% url 'social:sign_up' %}" > Or register here!</a>
           </form>
         </div>
       </div>
