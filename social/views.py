@@ -7,7 +7,6 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.password_validation import validate_password
 from django.core.exceptions import ValidationError
 from social.models import Comment, Post # put this at the top with the other imports
-import csv
 
 # Create your views here.
 
