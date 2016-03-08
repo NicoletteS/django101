@@ -12,8 +12,6 @@ class Post(models.Model):
     poster = models.ForeignKey(User)
     date_time = models.DateTimeField(auto_now=True)
     photo = models.ImageField(null=True, blank=True)
-    def __str__(self):
-        return self.text, self.poster, self.date_time
 
 class Comment(models.Model):
     text = models.TextField()
@@ -23,5 +21,3 @@ class Comment(models.Model):
     
     class Meta:
         ordering = ['-date_time']
-    def __str__(self):
-        return self.text, self.poster, self.date_time
