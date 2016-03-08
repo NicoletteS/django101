@@ -7,6 +7,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.password_validation import validate_password
 from django.core.exceptions import ValidationError
 from social.models import Comment, Post # put this at the top with the other imports
+import csv
 
 # Create your views here.
 
@@ -73,9 +74,18 @@ def add_post(request):
         if 'photo' in request.FILES and request.FILES['photo'] is not None:
             new_post.photo = request.FILES['photo']
         new_post.save()
+		save_to_csv(request)
         return HttpResponseRedirect(reverse('social:home'))
     else:
         return HttpResponseBadRequest(check[1])
+'''
+def save_to_csv(request):
+    response = HttpResponse(content_type='text/csv')
+    response['Content-Disposition'] = 'attachment;filename="data.csv"'
+
+    writer = csv.writer(response)
+    writer.writerow(["Hashtag", "Posistive", "Negative", "Neutral", "Day", "Month", "Year"])
+    writer '''
 
 def _check_post_request(request, keys):
     if request.method != 'POST':
