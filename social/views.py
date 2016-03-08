@@ -74,7 +74,7 @@ def add_post(request):
         if 'photo' in request.FILES and request.FILES['photo'] is not None:
             new_post.photo = request.FILES['photo']
         new_post.save()
-		save_to_csv(request)
+        save_to_csv(request)
         return HttpResponseRedirect(reverse('social:home'))
     else:
         return HttpResponseBadRequest(check[1])
