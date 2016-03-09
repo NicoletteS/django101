@@ -1,3 +1,4 @@
+$(document).ready(function() {
 var margin = {top: 20, right: 20, bottom: 30, left: 50},
     width = 960 - margin.left - margin.right,
     height = 500 - margin.top - margin.bottom;
@@ -23,11 +24,11 @@ var line = d3.svg.line()
     .x(function(d) { return x(d.date); })
     .y(function(d) { return y(d.count); });
 
-$(function() {var svg = d3.select("#lineChartContainer").append("svg")
+var svg = d3.select("#lineChartContainer").append("svg")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
   .append("g")
-    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");});
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
 d3.csv('/static/social/data.csv', function (error, data) {
   if (error) throw error;
@@ -74,3 +75,4 @@ d3.csv('/static/social/data.csv', function (error, data) {
       .attr("class", "line")
       .attr("d", line);
   });
+});
