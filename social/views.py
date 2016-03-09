@@ -109,6 +109,9 @@ def _check_post_request(request, keys):
             return (False, "The {} field cannot be empty!".format(key))
 
     return (True, "Everything is alright!")
+	
+def bubble(request):
+	return render(request, 'social/bubble.html')
     
 @login_required
 def add_comment(request):

@@ -10,4 +10,5 @@ urlpatterns = [
     url(r'post/delete/(?P<post_id>[0-9]+)/$',   views.delete_post, name="delete_post"),
 	url(r'sign_up/', views.sign_up, name='sign_up'),
 	url(r'user/add_user', views.add_user, name='add_user'),
+	url(r'bubble/', views.bubble, name="bubble"),
 ]
