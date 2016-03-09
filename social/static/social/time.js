@@ -23,11 +23,11 @@ var line = d3.svg.line()
     .x(function(d) { return x(d.date); })
     .y(function(d) { return y(d.count); });
 
-var svg = d3.select("body").append("svg")
+var svg = $(function() {d3.select("#lineChartContainer").append("svg")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
   .append("g")
-    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");});
 
 d3.csv('/static/social/data.csv', function (error, data) {
   if (error) throw error;
@@ -51,7 +51,7 @@ d3.csv('/static/social/data.csv', function (error, data) {
         dateArray[(data[i].date - minDate)/(1000*60*60*24)].count += 1;
     }
 
-  x.domain(d3.extent(dateArray, function(d) { console.log(d); return d.date; }));
+  x.domain(d3.extent(dateArray, function(d) { return d.date; }));
   y.domain([0, d3.max(dateArray, function(d) { return d.count; })]);
 
   svg.append("g")
