@@ -4,7 +4,24 @@
     <title> The Network Institute forum! </title>
     <link rel="stylesheet" href="{% static 'social/bootstrap-3.3.6-dist/css/bootstrap.css' %}"></link>
     <link rel="stylesheet" href="{% static 'social/bootstrap-3.3.6-dist/css/bootstrap-theme.css' %}"></link>
+<style>
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
 
+.x.axis path {
+  display: none;
+}
+
+.line {
+  fill: none;
+  stroke: steelblue;
+  stroke-width: 1.5px;
+}
+</style>
   </head>
   <body>
     <div class='container'>
@@ -44,8 +61,9 @@
       </form>
       <a class='btn btn-success' href="{% url 'social:home' %}">Show all</a>
     </div>
-	
-	        <div class='col-xs-8 col-xs-offset-2'>
+	</div>
+
+		        <div class='col-xs-8 col-xs-offset-2'>
           {% for post in posts %}
           <div class='panel panel-default' id="{{post.id}}">
             <div class='panel-heading'>
@@ -91,9 +109,9 @@
           {% endfor %}
         </div>
       </div>
-
+	
 	<!-- Added: list of hashtags-->
-	<div>
+	<div class='col-xs-2'>
 		<p>The following list shows the hashtags that can be used to link a post with a project of the Network Institute.
 		Clicking on the hashtag (if underlined) will show the project description.</p>
 		<ul> 
