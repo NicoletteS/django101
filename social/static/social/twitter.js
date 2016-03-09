@@ -1,6 +1,6 @@
 d3.csv('/static/social/data.csv', function (error, data) {
 
-    var width = 960, height = 800;
+    var width = document.body.clientWidth, height = 800;
     var svg = d3.select("body").append("svg")
         .attr("width", width)
         .attr("height", height);
