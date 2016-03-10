@@ -30,7 +30,7 @@ var svg = d3.select("#lineChartContainer").append("svg")
   .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-d3.csv('/static/social/data-all.csv', function (error, data) {
+d3.csv('/static/social/data.csv', function (error, data) {
   if (error) throw error;
 
     var maxDate = 0;

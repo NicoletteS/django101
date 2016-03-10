@@ -38,7 +38,7 @@ This website contains a forum about project from the Network Institute. Feel fre
 To give you some guidance; bellow you can post a comment and even add an image to it. Use a hashtag (#) to indicate over which project you are talking about (all projects of the Network Institute are listed on the right of the page, for more information you can click on it). The sentiment of the post on the project is visualized in a bubble chart. You can also introduce a new project! By introducing the project name with a asterisk (i.e. *newidea) you indicate that your post is about a new project and the sentiment bubbles are shown in a different graph where all new projects are introduced. With this graph the sentiment per project can be analyzed. The last feature that is in the website is the timeline above, this timeline indicates how popular the site is by showing how many posts are posted a day so make sure you jack up the number!
 	</p>
 	<a class='btn btn-success' href="{% url 'social:bubble' %}">Show bubble chart existing projects</a>
-	<a class='btn btn-success' href="{% url 'social:bubble2' %}">Show bubble chart new projects</a>
+	
         <h1> Write a new post </h1>
         <form action="{% url 'social:add_post' %}" method="post" id='new-post-form' enctype='multipart/form-data'>
         {% csrf_token %}
