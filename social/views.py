@@ -77,14 +77,6 @@ def add_post(request):
         return HttpResponseRedirect(reverse('social:home'))
     else:
         return HttpResponseBadRequest(check[1])
-'''
-def save_to_csv(request):
-    response = HttpResponse(content_type='text/csv')
-    response['Content-Disposition'] = 'attachment;filename="data.csv"'
-
-    writer = csv.writer(response)
-    writer.writerow(["Hashtag", "Posistive", "Negative", "Neutral", "Day", "Month", "Year"])
-    writer '''
 
 def _check_post_request(request, keys):
     if request.method != 'POST':
