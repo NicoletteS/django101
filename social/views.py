@@ -104,6 +104,9 @@ def _check_post_request(request, keys):
 	
 def bubble(request):
 	return render(request, 'social/bubble.html')
+
+def bubble2(request):
+    return render(request, 'social/bubble2.html')
     
 @login_required
 def add_comment(request):

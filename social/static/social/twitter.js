@@ -1,4 +1,4 @@
-d3.csv('/static/social/data.csv', function (error, data) {
+d3.csv('/static/social/data-hashtag.csv', function (error, data) {
 
     var width = document.body.clientWidth, height = 800;
     var svg = d3.select("body").append("svg")
