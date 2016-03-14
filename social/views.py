@@ -25,7 +25,6 @@ def social_login(request):
    else:
        return HttpResponseBadRequest(check[1])
 
-@login_required
 def home(request):
     if request.method == 'GET':
         posts = Post.objects.all()
