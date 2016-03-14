@@ -6,7 +6,7 @@ response = urllib2.urlopen(req)
 html = response.read()
 
 
-c = open("C:\Users\Nicolette\djangogirls\django101\social\htmlcode.txt", "w")
+c = open("htmlcode.txt", "w")
 c.write(html)
 c.close()
 

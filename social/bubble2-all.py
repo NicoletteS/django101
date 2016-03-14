@@ -40,7 +40,7 @@ import csv
 import subprocess
 import json
 
-c = open("C:\Users\Nicolette\djangogirls\django101\social\static\social\data-all.csv", "wb")
+c = open("\static\social\data-all.csv", "wb")
 csv = csv.writer(c)
 csv.writerow(["Hashtag", "Positive", "Negative", "Neutral", "Day", "Month", "Year"])
 

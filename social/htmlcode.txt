@@ -4,38 +4,1324 @@
     <title> The Network Institute forum! </title>
     <link rel="stylesheet" href="/static/social/bootstrap-3.3.6-dist/css/bootstrap.css"></link>
     <link rel="stylesheet" href="/static/social/bootstrap-3.3.6-dist/css/bootstrap-theme.css"></link>
-  </head>
-  <body role='document'>
-    <div class="container">
-      <div class='jumbotron'>
-        <h1> Welcome to the forum about the Network Institute!</h1>
-      </div>
-      <div class='row'>
-        <div class='col-xs-8 panel panel-default'>
-          <div class='panel-body'>
-            <p> On this forum, you can give your opinion about the projects of the Network Institute. On this site you can track how many people are posting. 
-			Also, a sentiment analysis is performed on these posts. What project is the most populair on this moment?
-            </p>
-          </div>
-        </div>
-        <div class='col-xs-4'>
-          <h2> Please sign in to continue </h2>
+<style>
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
 
-          <form action="/login/" method="post">
-            <input type='hidden' name='csrfmiddlewaretoken' value='5btKlyKUf2GN4iLf3k0Z6y6cDYf0o1RG' />
-            <div class='form-group'>
-              <label for="username-input">Username</label>
-              <input type="text" class="form-control" required name="username" id="username-input"> 
-            </div>
-            <div class='form-group'>
-              <label for="password-input">Password</label>
-              <input type="password"  class="form-control"  required name="password" id="password-input"> 
-            </div>
-            <button type="submit" class="btn btn-primary">Log in</button>
-			<a href="/sign_up/" > Or register here!</a>
-          </form>
-        </div>
+.x.axis path {
+  display: none;
+}
+
+.line {
+  fill: none;
+  stroke: steelblue;
+  stroke-width: 1.5px;
+}
+</style>
+  </head>
+  <body>
+    <div class='container'>
+	<div class='row' id='lineChartContainer'><h3 style='text-align: center;'>How often was something posted?</h3></div>
+<div class='row'>
+  <!-- New post container -->
+  <div class='col-xs-8 col-xs-offset-2'>
+    <div class='panel panel-primary' id='new-post'>
+      <div class='panel-body'>
+	  	<h1> 	Welcome! </h1>
+	<p> 
+This website contains a forum about project from the Network Institute. Feel free to look around!
+</p><p>
+To give you some guidance; bellow you can post a comment and even add an image to it. Use a hashtag (#) to indicate over which project you are talking about (all projects of the Network Institute are listed on the right of the page, for more information you can click on it). The sentiment of the post on the project is visualized in a bubble chart. You can also introduce a new project! By introducing the project name with a asterisk (i.e. *newidea) you indicate that your post is about a new project and the sentiment bubbles are shown in a different graph where all new projects are introduced. With this graph the sentiment per project can be analyzed. The last feature that is in the website is the timeline above, this timeline indicates how popular the site is by showing how many posts are posted a day so make sure you jack up the number!
+	</p>
+	<a class='btn btn-success' href="/bubble/">Show bubble chart existing projects</a>
+	<a class='btn btn-success' href="/bubble2/">Show bubble chart new projects</a>
+        <h1> Write a new post </h1>
+		<h3> Use a hashtag (#) before the project name to indicate you are talking about the project. Use a asterisk (*) before the project name to indicate you are talking about an new project. </h3>
+        <form action="/post/add/" method="post" id='new-post-form' enctype='multipart/form-data'>
+        <input type='hidden' name='csrfmiddlewaretoken' value='zc531bIbsJhuAS6JJ6GWeWu6mzmgVOdr' />
+          <div class='form-group'>
+            <textarea class='form-control'name='text' form='new-post-form' required placeholder="Write your post here..."></textarea> 
+          </div>
+          <div class='form-group'>
+            <input id='photo-upload' class='form-control' 
+                   type='file' name='photo' accept='image/*'>
+            </input>
+            <label for='photo-upload'>Upload a photo</label>
+          </div>
+          <button type='submit' class='btn btn-default'>Post</button>
+        </form>
       </div>
     </div>
+  </div>
+
+  <!-- Search box -->
+  <div class='col-xs-2'>
+    <div class='well'>
+      <form action="/home/" method="post" id='search-bar'>
+        <input type='hidden' name='csrfmiddlewaretoken' value='zc531bIbsJhuAS6JJ6GWeWu6mzmgVOdr' />
+        <div class='form-group'>
+          <input type='text' class='form-control' name='search_terms' required placeholder='Search in posts...'>
+        </div>
+        <button type='submit' class='btn btn-primary'>Search</button>
+      </form>
+      <a class='btn btn-success' href="/home/">Show all</a>
+    </div>
+	</div>
+
+		        <div class='col-xs-8 col-xs-offset-2'>
+          
+          <div class='panel panel-default' id="50">
+            <div class='panel-heading'>
+  <h4>nicolette</h4>
+  <h4 class='small'>
+    posted on March 14, 2016, 9:45 a.m.
+    
+  </h4>
+</div>
+<div class='panel-body'>
+  <p class='lead'>Obesity is a serious problem. Mostly because unhealthy snacks are so easily available and cheaper than healthy snacks. *IRIS is a system that can reduce unhealthy snacking by providing notifications via an app. 
+(More information about the project: http://www.networkinstitute.org/wp-content/uploads/2015/07/2.-Building-an-Intelligent-System-to-Reduce-Impulsive-Snacking-by-Providing-Tailored-and-Contextualised-Feedback.pdf)</p>
+</div>
+
+            <div class='row'>
+              <div class='col-xs-10 col-xs-offset-1'>
+                <ul class='list-group'>
+                  
+                  <li class='list-group-item'> 
+                    Isn&#39;t this a bit unnecessary? An app should not be necessary to keep people healthy, they should go outside and work out more. *IRIS - Dave (March 14, 2016, 9:49 a.m.) 
+                  </li>
+                  
+                  <li class='list-group-item'> 
+                    This would be a good project to help society. *IRIS - Ruben (March 14, 2016, 9:47 a.m.) 
+                  </li>
+                  
+                </ul>
+                <form action="/comment/add/" method="post">
+                <input type='hidden' name='csrfmiddlewaretoken' value='zc531bIbsJhuAS6JJ6GWeWu6mzmgVOdr' />
+                  <div class='form-group'>
+                    <input class='form-control' type='text' name='comment' required placeholder="Write your comment here..."/>
+                  </div>
+                  <input type='hidden' name='post_id' value=50 />
+                  <button class='btn btn-default' type='submit'>Submit</button>
+                </form>
+              </div>
+            </div>
+          </div>
+          
+          <div class='panel panel-default' id="49">
+            <div class='panel-heading'>
+  <h4>Branco</h4>
+  <h4 class='small'>
+    posted on March 14, 2016, 8:33 a.m.
+    
+  </h4>
+</div>
+<div class='panel-body'>
+  <p class='lead'>Having a hard time learning programming languages? *LPLM can help! (http://www.networkinstitute.org/wp-content/uploads/2015/07/8.-Learning-a-programming-language-from-mistakes.pdf) :
+
+‘This project focusses on learning from mistakes a new language, be it a foreign human natural or a programming one. .. The project sets out to explore possibilities to develop an efficient automatic training system to assist students in learning a new (programming) language.’
+</p>
+</div>
+
+            <div class='row'>
+              <div class='col-xs-10 col-xs-offset-1'>
+                <ul class='list-group'>
+                  
+                  <li class='list-group-item'> 
+                    I think it is interesting that your project involves both ‘human language’ and ‘programming language’, they both have semantics and syntax so I can see why you choose it. But do you take the difference into account between these languages? For instance, programming languages are closed and fixed where natural languages are not.  Also natural language is changing all the time and one sentence could have different meanings. I can go on like this for a while but I think I made my point. So in conclusion, do you take into account the difference between the human language and the programming language and especially the difficulties in human languages? If so, how do you solve the problems? *LPLM - vught (March 14, 2016, 9:51 a.m.) 
+                  </li>
+                  
+                </ul>
+                <form action="/comment/add/" method="post">
+                <input type='hidden' name='csrfmiddlewaretoken' value='zc531bIbsJhuAS6JJ6GWeWu6mzmgVOdr' />
+                  <div class='form-group'>
+                    <input class='form-control' type='text' name='comment' required placeholder="Write your comment here..."/>
+                  </div>
+                  <input type='hidden' name='post_id' value=49 />
+                  <button class='btn btn-default' type='submit'>Submit</button>
+                </form>
+              </div>
+            </div>
+          </div>
+          
+          <div class='panel panel-default' id="48">
+            <div class='panel-heading'>
+  <h4>willeke-vv</h4>
+  <h4 class='small'>
+    posted on March 13, 2016, 8:49 a.m.
+    
+  </h4>
+</div>
+<div class='panel-body'>
+  <p class='lead'>Hi! Recently I heared about this new project about ethical implications of self improving intelligent robots:
+
+‘There is substantial concern ... about the perceived threat of AI running amok, improving itself to outstrip human intelligence ... this proposal sets out a research project to investigate and test the safety and controllability of such ‘smart’ AI, in particular in intelligent robots. … This project aims to investigate the technical possibilities and philosophical implications of ensuring that general AI is safe and controllable… ‘ *EthicalRobots
+(More information about the project: http://www.networkinstitute.org/wp-content/uploads/2015/07/6.-Ethical-Implications-of-Self-Improving-Intelligent-Robots.pdf)
+
+What do you think about the ethical implications of ‘smart’ robots? Do you think this projects is necessary?
+</p>
+</div>
+
+            <div class='row'>
+              <div class='col-xs-10 col-xs-offset-1'>
+                <ul class='list-group'>
+                  
+                  <li class='list-group-item'> 
+                    Interesting thought! I am curious what the outcome of the project will bring us *EthicalRobots - Branco (March 14, 2016, 8:37 a.m.) 
+                  </li>
+                  
+                  <li class='list-group-item'> 
+                    Hey, cool! I think that it is always important to think about these sorts of things when you are working on the development of these sort of new techniques. Great that they want to put some focus on this! *EthicalRobots - Laura (March 13, 2016, 4:19 p.m.) 
+                  </li>
+                  
+                </ul>
+                <form action="/comment/add/" method="post">
+                <input type='hidden' name='csrfmiddlewaretoken' value='zc531bIbsJhuAS6JJ6GWeWu6mzmgVOdr' />
+                  <div class='form-group'>
+                    <input class='form-control' type='text' name='comment' required placeholder="Write your comment here..."/>
+                  </div>
+                  <input type='hidden' name='post_id' value=48 />
+                  <button class='btn btn-default' type='submit'>Submit</button>
+                </form>
+              </div>
+            </div>
+          </div>
+          
+          <div class='panel panel-default' id="47">
+            <div class='panel-heading'>
+  <h4>Gustavo</h4>
+  <h4 class='small'>
+    posted on March 11, 2016, 7:57 p.m.
+    
+  </h4>
+</div>
+<div class='panel-body'>
+  <p class='lead'>It has been a while now, but I just wanted to let you al know that our project #METIS is currently at a low ebb. Our website is still not working, but as soon as it&#39;s up we&#39;ll get together to discuss some new ideas. Please feel free to ventilate ideas you might have by commenting on my post (don&#39;t forget to use the asterisk!)</p>
+</div>
+
+<div class='col-xs-10 col-xs-offset-1'>
+  <img class='img-responsive center-block img-rounded' src=/media/metis.gif/>
+</div>
+
+            <div class='row'>
+              <div class='col-xs-10 col-xs-offset-1'>
+                <ul class='list-group'>
+                  
+                </ul>
+                <form action="/comment/add/" method="post">
+                <input type='hidden' name='csrfmiddlewaretoken' value='zc531bIbsJhuAS6JJ6GWeWu6mzmgVOdr' />
+                  <div class='form-group'>
+                    <input class='form-control' type='text' name='comment' required placeholder="Write your comment here..."/>
+                  </div>
+                  <input type='hidden' name='post_id' value=47 />
+                  <button class='btn btn-default' type='submit'>Submit</button>
+                </form>
+              </div>
+            </div>
+          </div>
+          
+          <div class='panel panel-default' id="45">
+            <div class='panel-heading'>
+  <h4>Walter</h4>
+  <h4 class='small'>
+    posted on March 11, 2016, 7:27 p.m.
+    
+  </h4>
+</div>
+<div class='panel-body'>
+  <p class='lead'>Quite recently the Dutch Railways began to discuss the topic of increasing the responsibilities of conductors during railroad failures. In this case, a problem such as a switch that is stuck can be solved succesfully in much shorter time. Great idea to take into account in our project #MCSD</p>
+</div>
+
+            <div class='row'>
+              <div class='col-xs-10 col-xs-offset-1'>
+                <ul class='list-group'>
+                  
+                </ul>
+                <form action="/comment/add/" method="post">
+                <input type='hidden' name='csrfmiddlewaretoken' value='zc531bIbsJhuAS6JJ6GWeWu6mzmgVOdr' />
+                  <div class='form-group'>
+                    <input class='form-control' type='text' name='comment' required placeholder="Write your comment here..."/>
+                  </div>
+                  <input type='hidden' name='post_id' value=45 />
+                  <button class='btn btn-default' type='submit'>Submit</button>
+                </form>
+              </div>
+            </div>
+          </div>
+          
+          <div class='panel panel-default' id="43">
+            <div class='panel-heading'>
+  <h4>Hank</h4>
+  <h4 class='small'>
+    posted on March 11, 2016, 6:59 p.m.
+    
+  </h4>
+</div>
+<div class='panel-body'>
+  <p class='lead'>One a more serious note, an interesting application of our #STRESS project is in public transport, where it can be used to lower aggression. Maybe also a very relevant topic for you, Walter!</p>
+</div>
+
+            <div class='row'>
+              <div class='col-xs-10 col-xs-offset-1'>
+                <ul class='list-group'>
+                  
+                  <li class='list-group-item'> 
+                    Indeed a nice application! Especially combined with our attempt at making the railroadtraffic flow better. Maybe we could combine our ideas and set up a new project, focused at making travellers feel more at ease. *carefreetravel - Walter (March 11, 2016, 7:14 p.m.) 
+                  </li>
+                  
+                </ul>
+                <form action="/comment/add/" method="post">
+                <input type='hidden' name='csrfmiddlewaretoken' value='zc531bIbsJhuAS6JJ6GWeWu6mzmgVOdr' />
+                  <div class='form-group'>
+                    <input class='form-control' type='text' name='comment' required placeholder="Write your comment here..."/>
+                  </div>
+                  <input type='hidden' name='post_id' value=43 />
+                  <button class='btn btn-default' type='submit'>Submit</button>
+                </form>
+              </div>
+            </div>
+          </div>
+          
+          <div class='panel panel-default' id="42">
+            <div class='panel-heading'>
+  <h4>Hank</h4>
+  <h4 class='small'>
+    posted on March 11, 2016, 6:53 p.m.
+    
+  </h4>
+</div>
+<div class='panel-body'>
+  <p class='lead'>We had a very interesting day today, because there was a fire drill! A great exercise for our intelligent system, which certainly kept its head cool ;) #STRESS</p>
+</div>
+
+            <div class='row'>
+              <div class='col-xs-10 col-xs-offset-1'>
+                <ul class='list-group'>
+                  
+                </ul>
+                <form action="/comment/add/" method="post">
+                <input type='hidden' name='csrfmiddlewaretoken' value='zc531bIbsJhuAS6JJ6GWeWu6mzmgVOdr' />
+                  <div class='form-group'>
+                    <input class='form-control' type='text' name='comment' required placeholder="Write your comment here..."/>
+                  </div>
+                  <input type='hidden' name='post_id' value=42 />
+                  <button class='btn btn-default' type='submit'>Submit</button>
+                </form>
+              </div>
+            </div>
+          </div>
+          
+          <div class='panel panel-default' id="41">
+            <div class='panel-heading'>
+  <h4>Ruben</h4>
+  <h4 class='small'>
+    posted on March 11, 2016, 5:08 p.m.
+    
+  </h4>
+</div>
+<div class='panel-body'>
+  <p class='lead'>Would it be interesting to use EEG measurements to measure brainwaves in social contact. *SocialAnxiety</p>
+</div>
+
+            <div class='row'>
+              <div class='col-xs-10 col-xs-offset-1'>
+                <ul class='list-group'>
+                  
+                  <li class='list-group-item'> 
+                    Very interesting indeed! I think that this would be a great idea to further investigate, especially how this could help therapy development. Cool! *socialanxiety - Laura (March 11, 2016, 5:19 p.m.) 
+                  </li>
+                  
+                  <li class='list-group-item'> 
+                    Very nice idea. MyndPlay could be a great EEG tool for this. *SocialAnxiety - nicolette (March 11, 2016, 5:09 p.m.) 
+                  </li>
+                  
+                </ul>
+                <form action="/comment/add/" method="post">
+                <input type='hidden' name='csrfmiddlewaretoken' value='zc531bIbsJhuAS6JJ6GWeWu6mzmgVOdr' />
+                  <div class='form-group'>
+                    <input class='form-control' type='text' name='comment' required placeholder="Write your comment here..."/>
+                  </div>
+                  <input type='hidden' name='post_id' value=41 />
+                  <button class='btn btn-default' type='submit'>Submit</button>
+                </form>
+              </div>
+            </div>
+          </div>
+          
+          <div class='panel panel-default' id="40">
+            <div class='panel-heading'>
+  <h4>Max</h4>
+  <h4 class='small'>
+    posted on March 11, 2016, 3:16 p.m.
+    
+  </h4>
+</div>
+<div class='panel-body'>
+  <p class='lead'>I really do not believe that elderly people are waiting for robots to keep them company. We really have to see the real problem here and that is there are not enough care takers currently because there is &quot;no money&quot;.. #SELEMCA</p>
+</div>
+
+            <div class='row'>
+              <div class='col-xs-10 col-xs-offset-1'>
+                <ul class='list-group'>
+                  
+                </ul>
+                <form action="/comment/add/" method="post">
+                <input type='hidden' name='csrfmiddlewaretoken' value='zc531bIbsJhuAS6JJ6GWeWu6mzmgVOdr' />
+                  <div class='form-group'>
+                    <input class='form-control' type='text' name='comment' required placeholder="Write your comment here..."/>
+                  </div>
+                  <input type='hidden' name='post_id' value=40 />
+                  <button class='btn btn-default' type='submit'>Submit</button>
+                </form>
+              </div>
+            </div>
+          </div>
+          
+          <div class='panel panel-default' id="39">
+            <div class='panel-heading'>
+  <h4>Dave</h4>
+  <h4 class='small'>
+    posted on March 11, 2016, 12:30 p.m.
+    
+  </h4>
+</div>
+<div class='panel-body'>
+  <p class='lead'>Haha, isn&#39;t a project about #cyberchondria a bit ironic? By creating more awareness, isn&#39;t this problem only getting bigger?</p>
+</div>
+
+            <div class='row'>
+              <div class='col-xs-10 col-xs-offset-1'>
+                <ul class='list-group'>
+                  
+                </ul>
+                <form action="/comment/add/" method="post">
+                <input type='hidden' name='csrfmiddlewaretoken' value='zc531bIbsJhuAS6JJ6GWeWu6mzmgVOdr' />
+                  <div class='form-group'>
+                    <input class='form-control' type='text' name='comment' required placeholder="Write your comment here..."/>
+                  </div>
+                  <input type='hidden' name='post_id' value=39 />
+                  <button class='btn btn-default' type='submit'>Submit</button>
+                </form>
+              </div>
+            </div>
+          </div>
+          
+          <div class='panel panel-default' id="38">
+            <div class='panel-heading'>
+  <h4>Joe</h4>
+  <h4 class='small'>
+    posted on March 11, 2016, 12:29 p.m.
+    
+  </h4>
+</div>
+<div class='panel-body'>
+  <p class='lead'>Why bother doing a project on #NoTube ? I don&#39;t see the point for this..</p>
+</div>
+
+            <div class='row'>
+              <div class='col-xs-10 col-xs-offset-1'>
+                <ul class='list-group'>
+                  
+                  <li class='list-group-item'> 
+                    Maybe you should look at the slides of the project, they are quite informative! - Gustavo (March 11, 2016, 7:53 p.m.) 
+                  </li>
+                  
+                </ul>
+                <form action="/comment/add/" method="post">
+                <input type='hidden' name='csrfmiddlewaretoken' value='zc531bIbsJhuAS6JJ6GWeWu6mzmgVOdr' />
+                  <div class='form-group'>
+                    <input class='form-control' type='text' name='comment' required placeholder="Write your comment here..."/>
+                  </div>
+                  <input type='hidden' name='post_id' value=38 />
+                  <button class='btn btn-default' type='submit'>Submit</button>
+                </form>
+              </div>
+            </div>
+          </div>
+          
+          <div class='panel panel-default' id="37">
+            <div class='panel-heading'>
+  <h4>Laura</h4>
+  <h4 class='small'>
+    posted on March 10, 2016, 3:33 p.m.
+    
+  </h4>
+</div>
+<div class='panel-body'>
+  <p class='lead'>I would love to do a project that would investigate whether robots could improve the learning of high school students. Would this be something the network institute is interested in? Any thought? *teacherrobot</p>
+</div>
+
+            <div class='row'>
+              <div class='col-xs-10 col-xs-offset-1'>
+                <ul class='list-group'>
+                  
+                  <li class='list-group-item'> 
+                    Really interesting! I think that this would be very interdisciplinary and therefore perfectly fit the network institute. Keep up the good work! *teacherrobot - Ingrid (March 11, 2016, 2:57 p.m.) 
+                  </li>
+                  
+                  <li class='list-group-item'> 
+                    This would be very interesting. I think this project would be a great project for the network institute. *teacherrobot - Dave (March 11, 2016, 12:32 p.m.) 
+                  </li>
+                  
+                </ul>
+                <form action="/comment/add/" method="post">
+                <input type='hidden' name='csrfmiddlewaretoken' value='zc531bIbsJhuAS6JJ6GWeWu6mzmgVOdr' />
+                  <div class='form-group'>
+                    <input class='form-control' type='text' name='comment' required placeholder="Write your comment here..."/>
+                  </div>
+                  <input type='hidden' name='post_id' value=37 />
+                  <button class='btn btn-default' type='submit'>Submit</button>
+                </form>
+              </div>
+            </div>
+          </div>
+          
+          <div class='panel panel-default' id="36">
+            <div class='panel-heading'>
+  <h4>Ingrid</h4>
+  <h4 class='small'>
+    posted on March 10, 2016, 3:24 p.m.
+    
+  </h4>
+</div>
+<div class='panel-body'>
+  <p class='lead'>My old grandma just watched &quot;Ik ben Alice&quot; and was so excited! She would love to have one of your robots #selemca</p>
+</div>
+
+            <div class='row'>
+              <div class='col-xs-10 col-xs-offset-1'>
+                <ul class='list-group'>
+                  
+                </ul>
+                <form action="/comment/add/" method="post">
+                <input type='hidden' name='csrfmiddlewaretoken' value='zc531bIbsJhuAS6JJ6GWeWu6mzmgVOdr' />
+                  <div class='form-group'>
+                    <input class='form-control' type='text' name='comment' required placeholder="Write your comment here..."/>
+                  </div>
+                  <input type='hidden' name='post_id' value=36 />
+                  <button class='btn btn-default' type='submit'>Submit</button>
+                </form>
+              </div>
+            </div>
+          </div>
+          
+          <div class='panel panel-default' id="35">
+            <div class='panel-heading'>
+  <h4>Laura</h4>
+  <h4 class='small'>
+    posted on March 10, 2016, 11:40 a.m.
+    
+  </h4>
+</div>
+<div class='panel-body'>
+  <p class='lead'>Great that the project #womenICT focusses on the Codeweek, however I do not see how this relates to the topic of women in ICT...</p>
+</div>
+
+            <div class='row'>
+              <div class='col-xs-10 col-xs-offset-1'>
+                <ul class='list-group'>
+                  
+                </ul>
+                <form action="/comment/add/" method="post">
+                <input type='hidden' name='csrfmiddlewaretoken' value='zc531bIbsJhuAS6JJ6GWeWu6mzmgVOdr' />
+                  <div class='form-group'>
+                    <input class='form-control' type='text' name='comment' required placeholder="Write your comment here..."/>
+                  </div>
+                  <input type='hidden' name='post_id' value=35 />
+                  <button class='btn btn-default' type='submit'>Submit</button>
+                </form>
+              </div>
+            </div>
+          </div>
+          
+          <div class='panel panel-default' id="34">
+            <div class='panel-heading'>
+  <h4>Ingrid</h4>
+  <h4 class='small'>
+    posted on March 10, 2016, 10:06 a.m.
+    
+  </h4>
+</div>
+<div class='panel-body'>
+  <p class='lead'>I just saw that the second symposium of ICT4D is available online. It is good to share these kind of knowledge with the world so that we can all work on this topic. #W4RA</p>
+</div>
+
+            <div class='row'>
+              <div class='col-xs-10 col-xs-offset-1'>
+                <ul class='list-group'>
+                  
+                </ul>
+                <form action="/comment/add/" method="post">
+                <input type='hidden' name='csrfmiddlewaretoken' value='zc531bIbsJhuAS6JJ6GWeWu6mzmgVOdr' />
+                  <div class='form-group'>
+                    <input class='form-control' type='text' name='comment' required placeholder="Write your comment here..."/>
+                  </div>
+                  <input type='hidden' name='post_id' value=34 />
+                  <button class='btn btn-default' type='submit'>Submit</button>
+                </form>
+              </div>
+            </div>
+          </div>
+          
+          <div class='panel panel-default' id="25">
+            <div class='panel-heading'>
+  <h4>Hank</h4>
+  <h4 class='small'>
+    posted on March 10, 2016, 10:01 a.m.
+    
+  </h4>
+</div>
+<div class='panel-body'>
+  <p class='lead'>Making decisions is not always easy. Luckily, our new training environment shows great promise to help emergency workers making the right decisions on the spot. #STRESS</p>
+</div>
+
+            <div class='row'>
+              <div class='col-xs-10 col-xs-offset-1'>
+                <ul class='list-group'>
+                  
+                </ul>
+                <form action="/comment/add/" method="post">
+                <input type='hidden' name='csrfmiddlewaretoken' value='zc531bIbsJhuAS6JJ6GWeWu6mzmgVOdr' />
+                  <div class='form-group'>
+                    <input class='form-control' type='text' name='comment' required placeholder="Write your comment here..."/>
+                  </div>
+                  <input type='hidden' name='post_id' value=25 />
+                  <button class='btn btn-default' type='submit'>Submit</button>
+                </form>
+              </div>
+            </div>
+          </div>
+          
+          <div class='panel panel-default' id="24">
+            <div class='panel-heading'>
+  <h4>Hank</h4>
+  <h4 class='small'>
+    posted on March 10, 2016, 10 a.m.
+    
+  </h4>
+</div>
+<div class='panel-body'>
+  <p class='lead'>We&#39;ve recently been mentioned in an article in the Dutch paper &#39;Het Parool&#39;. Wonderful to see that others are as enthusiastic as we are about our project! #STRESS</p>
+</div>
+
+            <div class='row'>
+              <div class='col-xs-10 col-xs-offset-1'>
+                <ul class='list-group'>
+                  
+                </ul>
+                <form action="/comment/add/" method="post">
+                <input type='hidden' name='csrfmiddlewaretoken' value='zc531bIbsJhuAS6JJ6GWeWu6mzmgVOdr' />
+                  <div class='form-group'>
+                    <input class='form-control' type='text' name='comment' required placeholder="Write your comment here..."/>
+                  </div>
+                  <input type='hidden' name='post_id' value=24 />
+                  <button class='btn btn-default' type='submit'>Submit</button>
+                </form>
+              </div>
+            </div>
+          </div>
+          
+          <div class='panel panel-default' id="6">
+            <div class='panel-heading'>
+  <h4>nicolette</h4>
+  <h4 class='small'>
+    posted on March 10, 2016, 9:59 a.m.
+    
+  </h4>
+</div>
+<div class='panel-body'>
+  <p class='lead'>The stress project could help a lot in the development of the training of workers in the Public Transport. It is great that research is done in this field! #STRESS</p>
+</div>
+
+            <div class='row'>
+              <div class='col-xs-10 col-xs-offset-1'>
+                <ul class='list-group'>
+                  
+                  <li class='list-group-item'> 
+                    Yes, it is a hot topic nowadays! Good that they are developping a training for this #STRESS - Laura (March 10, 2016, 10:01 a.m.) 
+                  </li>
+                  
+                </ul>
+                <form action="/comment/add/" method="post">
+                <input type='hidden' name='csrfmiddlewaretoken' value='zc531bIbsJhuAS6JJ6GWeWu6mzmgVOdr' />
+                  <div class='form-group'>
+                    <input class='form-control' type='text' name='comment' required placeholder="Write your comment here..."/>
+                  </div>
+                  <input type='hidden' name='post_id' value=6 />
+                  <button class='btn btn-default' type='submit'>Submit</button>
+                </form>
+              </div>
+            </div>
+          </div>
+          
+          <div class='panel panel-default' id="33">
+            <div class='panel-heading'>
+  <h4>Ingrid</h4>
+  <h4 class='small'>
+    posted on March 10, 2016, 9:59 a.m.
+    
+  </h4>
+</div>
+<div class='panel-body'>
+  <p class='lead'>It is so interesting to see that #W4RG is focussing on the regreening of Africa in a very interdisciplinairy way! Good work!</p>
+</div>
+
+            <div class='row'>
+              <div class='col-xs-10 col-xs-offset-1'>
+                <ul class='list-group'>
+                  
+                </ul>
+                <form action="/comment/add/" method="post">
+                <input type='hidden' name='csrfmiddlewaretoken' value='zc531bIbsJhuAS6JJ6GWeWu6mzmgVOdr' />
+                  <div class='form-group'>
+                    <input class='form-control' type='text' name='comment' required placeholder="Write your comment here..."/>
+                  </div>
+                  <input type='hidden' name='post_id' value=33 />
+                  <button class='btn btn-default' type='submit'>Submit</button>
+                </form>
+              </div>
+            </div>
+          </div>
+          
+          <div class='panel panel-default' id="32">
+            <div class='panel-heading'>
+  <h4>vught</h4>
+  <h4 class='small'>
+    posted on March 10, 2016, 9:58 a.m.
+    
+  </h4>
+</div>
+<div class='panel-body'>
+  <p class='lead'>Vicomtecht, olery, VU university amsterdam, IXA group (university of the Basque Country), Synthema, IIT worked togather on the #opeNER project, these are organization from spain, The Netherlands, Basque countries and Italy. Very nice cooperation! </p>
+</div>
+
+            <div class='row'>
+              <div class='col-xs-10 col-xs-offset-1'>
+                <ul class='list-group'>
+                  
+                </ul>
+                <form action="/comment/add/" method="post">
+                <input type='hidden' name='csrfmiddlewaretoken' value='zc531bIbsJhuAS6JJ6GWeWu6mzmgVOdr' />
+                  <div class='form-group'>
+                    <input class='form-control' type='text' name='comment' required placeholder="Write your comment here..."/>
+                  </div>
+                  <input type='hidden' name='post_id' value=32 />
+                  <button class='btn btn-default' type='submit'>Submit</button>
+                </form>
+              </div>
+            </div>
+          </div>
+          
+          <div class='panel panel-default' id="31">
+            <div class='panel-heading'>
+  <h4>willeke-vv</h4>
+  <h4 class='small'>
+    posted on March 10, 2016, 9:58 a.m.
+    
+  </h4>
+</div>
+<div class='panel-body'>
+  <p class='lead'>#MONA posted a research poster in 2012, funny how they related the first steps to real life (the papers and the lemon)</p>
+</div>
+
+<div class='col-xs-10 col-xs-offset-1'>
+  <img class='img-responsive center-block img-rounded' src=/media/Knipsel.PNG/>
+</div>
+
+            <div class='row'>
+              <div class='col-xs-10 col-xs-offset-1'>
+                <ul class='list-group'>
+                  
+                </ul>
+                <form action="/comment/add/" method="post">
+                <input type='hidden' name='csrfmiddlewaretoken' value='zc531bIbsJhuAS6JJ6GWeWu6mzmgVOdr' />
+                  <div class='form-group'>
+                    <input class='form-control' type='text' name='comment' required placeholder="Write your comment here..."/>
+                  </div>
+                  <input type='hidden' name='post_id' value=31 />
+                  <button class='btn btn-default' type='submit'>Submit</button>
+                </form>
+              </div>
+            </div>
+          </div>
+          
+          <div class='panel panel-default' id="15">
+            <div class='panel-heading'>
+  <h4>nicolette</h4>
+  <h4 class='small'>
+    posted on March 10, 2016, 9:58 a.m.
+    
+  </h4>
+</div>
+<div class='panel-body'>
+  <p class='lead'>Watching TV will be so much better with #NoTube</p>
+</div>
+
+            <div class='row'>
+              <div class='col-xs-10 col-xs-offset-1'>
+                <ul class='list-group'>
+                  
+                </ul>
+                <form action="/comment/add/" method="post">
+                <input type='hidden' name='csrfmiddlewaretoken' value='zc531bIbsJhuAS6JJ6GWeWu6mzmgVOdr' />
+                  <div class='form-group'>
+                    <input class='form-control' type='text' name='comment' required placeholder="Write your comment here..."/>
+                  </div>
+                  <input type='hidden' name='post_id' value=15 />
+                  <button class='btn btn-default' type='submit'>Submit</button>
+                </form>
+              </div>
+            </div>
+          </div>
+          
+          <div class='panel panel-default' id="30">
+            <div class='panel-heading'>
+  <h4>Branco</h4>
+  <h4 class='small'>
+    posted on March 10, 2016, 9:37 a.m.
+    
+  </h4>
+</div>
+<div class='panel-body'>
+  <p class='lead'>In the last post of #MONA from the NI they talk about making some gold standards for tools to make sense of large datasets to understand activist groups’ tactics and their targets’ responses. The post was from 2013, I am curious how this worked out.</p>
+</div>
+
+            <div class='row'>
+              <div class='col-xs-10 col-xs-offset-1'>
+                <ul class='list-group'>
+                  
+                </ul>
+                <form action="/comment/add/" method="post">
+                <input type='hidden' name='csrfmiddlewaretoken' value='zc531bIbsJhuAS6JJ6GWeWu6mzmgVOdr' />
+                  <div class='form-group'>
+                    <input class='form-control' type='text' name='comment' required placeholder="Write your comment here..."/>
+                  </div>
+                  <input type='hidden' name='post_id' value=30 />
+                  <button class='btn btn-default' type='submit'>Submit</button>
+                </form>
+              </div>
+            </div>
+          </div>
+          
+          <div class='panel panel-default' id="28">
+            <div class='panel-heading'>
+  <h4>Daphne</h4>
+  <h4 class='small'>
+    posted on March 10, 2016, 8:30 a.m.
+    
+  </h4>
+</div>
+<div class='panel-body'>
+  <p class='lead'>Wauw, so curious what the #cyberchondria project will bring. It would be amazing if they found that cyberchondria in fact makes us sicker!</p>
+</div>
+
+            <div class='row'>
+              <div class='col-xs-10 col-xs-offset-1'>
+                <ul class='list-group'>
+                  
+                </ul>
+                <form action="/comment/add/" method="post">
+                <input type='hidden' name='csrfmiddlewaretoken' value='zc531bIbsJhuAS6JJ6GWeWu6mzmgVOdr' />
+                  <div class='form-group'>
+                    <input class='form-control' type='text' name='comment' required placeholder="Write your comment here..."/>
+                  </div>
+                  <input type='hidden' name='post_id' value=28 />
+                  <button class='btn btn-default' type='submit'>Submit</button>
+                </form>
+              </div>
+            </div>
+          </div>
+          
+          <div class='panel panel-default' id="27">
+            <div class='panel-heading'>
+  <h4>Walter</h4>
+  <h4 class='small'>
+    posted on March 9, 2016, 8:47 p.m.
+    
+  </h4>
+</div>
+<div class='panel-body'>
+  <p class='lead'>Choo choo! All aboard! We are well underway to greatly improve the Dutch railway system #MCSD! A lot of good ideas have been brought up today at our &#39;happy travellers meeting&#39; near Amsterdam Central Station :)</p>
+</div>
+
+<div class='col-xs-10 col-xs-offset-1'>
+  <img class='img-responsive center-block img-rounded' src=/media/trein_73012a.jpg/>
+</div>
+
+            <div class='row'>
+              <div class='col-xs-10 col-xs-offset-1'>
+                <ul class='list-group'>
+                  
+                </ul>
+                <form action="/comment/add/" method="post">
+                <input type='hidden' name='csrfmiddlewaretoken' value='zc531bIbsJhuAS6JJ6GWeWu6mzmgVOdr' />
+                  <div class='form-group'>
+                    <input class='form-control' type='text' name='comment' required placeholder="Write your comment here..."/>
+                  </div>
+                  <input type='hidden' name='post_id' value=27 />
+                  <button class='btn btn-default' type='submit'>Submit</button>
+                </form>
+              </div>
+            </div>
+          </div>
+          
+          <div class='panel panel-default' id="26">
+            <div class='panel-heading'>
+  <h4>Gustavo</h4>
+  <h4 class='small'>
+    posted on March 9, 2016, 8:39 p.m.
+    
+  </h4>
+</div>
+<div class='panel-body'>
+  <p class='lead'>Oh no! Our site is down again! Please stay tuned while we try to solve this difficult problem... #METIS</p>
+</div>
+
+            <div class='row'>
+              <div class='col-xs-10 col-xs-offset-1'>
+                <ul class='list-group'>
+                  
+                </ul>
+                <form action="/comment/add/" method="post">
+                <input type='hidden' name='csrfmiddlewaretoken' value='zc531bIbsJhuAS6JJ6GWeWu6mzmgVOdr' />
+                  <div class='form-group'>
+                    <input class='form-control' type='text' name='comment' required placeholder="Write your comment here..."/>
+                  </div>
+                  <input type='hidden' name='post_id' value=26 />
+                  <button class='btn btn-default' type='submit'>Submit</button>
+                </form>
+              </div>
+            </div>
+          </div>
+          
+          <div class='panel panel-default' id="21">
+            <div class='panel-heading'>
+  <h4>Laura</h4>
+  <h4 class='small'>
+    posted on March 9, 2016, 1:26 p.m.
+    
+  </h4>
+</div>
+<div class='panel-body'>
+  <p class='lead'>Just saw a happy elderly with a seal robot. Hopefully #Selemca can also make elderly people happy again with their care robots.</p>
+</div>
+
+            <div class='row'>
+              <div class='col-xs-10 col-xs-offset-1'>
+                <ul class='list-group'>
+                  
+                </ul>
+                <form action="/comment/add/" method="post">
+                <input type='hidden' name='csrfmiddlewaretoken' value='zc531bIbsJhuAS6JJ6GWeWu6mzmgVOdr' />
+                  <div class='form-group'>
+                    <input class='form-control' type='text' name='comment' required placeholder="Write your comment here..."/>
+                  </div>
+                  <input type='hidden' name='post_id' value=21 />
+                  <button class='btn btn-default' type='submit'>Submit</button>
+                </form>
+              </div>
+            </div>
+          </div>
+          
+          <div class='panel panel-default' id="20">
+            <div class='panel-heading'>
+  <h4>willeke-vv</h4>
+  <h4 class='small'>
+    posted on March 9, 2016, 12:52 p.m.
+    
+  </h4>
+</div>
+<div class='panel-body'>
+  <p class='lead'>Oe, another project from the Network Insitute that extracts data is #MONA, this tool does has nice visualisation techniques but has as purpuse the analyzation of activist organizations.. The tools are still nice though!</p>
+</div>
+
+            <div class='row'>
+              <div class='col-xs-10 col-xs-offset-1'>
+                <ul class='list-group'>
+                  
+                </ul>
+                <form action="/comment/add/" method="post">
+                <input type='hidden' name='csrfmiddlewaretoken' value='zc531bIbsJhuAS6JJ6GWeWu6mzmgVOdr' />
+                  <div class='form-group'>
+                    <input class='form-control' type='text' name='comment' required placeholder="Write your comment here..."/>
+                  </div>
+                  <input type='hidden' name='post_id' value=20 />
+                  <button class='btn btn-default' type='submit'>Submit</button>
+                </form>
+              </div>
+            </div>
+          </div>
+          
+          <div class='panel panel-default' id="19">
+            <div class='panel-heading'>
+  <h4>willeke-vv</h4>
+  <h4 class='small'>
+    posted on March 9, 2016, 12:50 p.m.
+    
+  </h4>
+</div>
+<div class='panel-body'>
+  <p class='lead'>Too bad #opeNER has no pretty visualisation tools in it.</p>
+</div>
+
+            <div class='row'>
+              <div class='col-xs-10 col-xs-offset-1'>
+                <ul class='list-group'>
+                  
+                </ul>
+                <form action="/comment/add/" method="post">
+                <input type='hidden' name='csrfmiddlewaretoken' value='zc531bIbsJhuAS6JJ6GWeWu6mzmgVOdr' />
+                  <div class='form-group'>
+                    <input class='form-control' type='text' name='comment' required placeholder="Write your comment here..."/>
+                  </div>
+                  <input type='hidden' name='post_id' value=19 />
+                  <button class='btn btn-default' type='submit'>Submit</button>
+                </form>
+              </div>
+            </div>
+          </div>
+          
+          <div class='panel panel-default' id="18">
+            <div class='panel-heading'>
+  <h4>willeke-vv</h4>
+  <h4 class='small'>
+    posted on March 9, 2016, 12:49 p.m.
+    
+  </h4>
+</div>
+<div class='panel-body'>
+  <p class='lead'>#opeNer detects sentiments, opinions and named entities in texts and visualises the results, it is a bit like what is done on this website! The project can help improving this blog.</p>
+</div>
+
+            <div class='row'>
+              <div class='col-xs-10 col-xs-offset-1'>
+                <ul class='list-group'>
+                  
+                </ul>
+                <form action="/comment/add/" method="post">
+                <input type='hidden' name='csrfmiddlewaretoken' value='zc531bIbsJhuAS6JJ6GWeWu6mzmgVOdr' />
+                  <div class='form-group'>
+                    <input class='form-control' type='text' name='comment' required placeholder="Write your comment here..."/>
+                  </div>
+                  <input type='hidden' name='post_id' value=18 />
+                  <button class='btn btn-default' type='submit'>Submit</button>
+                </form>
+              </div>
+            </div>
+          </div>
+          
+          <div class='panel panel-default' id="16">
+            <div class='panel-heading'>
+  <h4>Laura</h4>
+  <h4 class='small'>
+    posted on March 9, 2016, 12:28 p.m.
+    
+  </h4>
+</div>
+<div class='panel-body'>
+  <p class='lead'>I was excited about #womenICT, but then I found out that the website did not really focus on women.. Missed opportunity.</p>
+</div>
+
+            <div class='row'>
+              <div class='col-xs-10 col-xs-offset-1'>
+                <ul class='list-group'>
+                  
+                </ul>
+                <form action="/comment/add/" method="post">
+                <input type='hidden' name='csrfmiddlewaretoken' value='zc531bIbsJhuAS6JJ6GWeWu6mzmgVOdr' />
+                  <div class='form-group'>
+                    <input class='form-control' type='text' name='comment' required placeholder="Write your comment here..."/>
+                  </div>
+                  <input type='hidden' name='post_id' value=16 />
+                  <button class='btn btn-default' type='submit'>Submit</button>
+                </form>
+              </div>
+            </div>
+          </div>
+          
+          <div class='panel panel-default' id="14">
+            <div class='panel-heading'>
+  <h4>Laura</h4>
+  <h4 class='small'>
+    posted on March 8, 2016, 9:45 p.m.
+    
+  </h4>
+</div>
+<div class='panel-body'>
+  <p class='lead'>Super excited about the project to regreen Africa #W4RA</p>
+</div>
+
+            <div class='row'>
+              <div class='col-xs-10 col-xs-offset-1'>
+                <ul class='list-group'>
+                  
+                </ul>
+                <form action="/comment/add/" method="post">
+                <input type='hidden' name='csrfmiddlewaretoken' value='zc531bIbsJhuAS6JJ6GWeWu6mzmgVOdr' />
+                  <div class='form-group'>
+                    <input class='form-control' type='text' name='comment' required placeholder="Write your comment here..."/>
+                  </div>
+                  <input type='hidden' name='post_id' value=14 />
+                  <button class='btn btn-default' type='submit'>Submit</button>
+                </form>
+              </div>
+            </div>
+          </div>
+          
+          <div class='panel panel-default' id="13">
+            <div class='panel-heading'>
+  <h4>nicolette</h4>
+  <h4 class='small'>
+    posted on March 8, 2016, 9:32 p.m.
+    
+  </h4>
+</div>
+<div class='panel-body'>
+  <p class='lead'>Lot of text mining going on for the #NewsReader project!</p>
+</div>
+
+            <div class='row'>
+              <div class='col-xs-10 col-xs-offset-1'>
+                <ul class='list-group'>
+                  
+                </ul>
+                <form action="/comment/add/" method="post">
+                <input type='hidden' name='csrfmiddlewaretoken' value='zc531bIbsJhuAS6JJ6GWeWu6mzmgVOdr' />
+                  <div class='form-group'>
+                    <input class='form-control' type='text' name='comment' required placeholder="Write your comment here..."/>
+                  </div>
+                  <input type='hidden' name='post_id' value=13 />
+                  <button class='btn btn-default' type='submit'>Submit</button>
+                </form>
+              </div>
+            </div>
+          </div>
+          
+          <div class='panel panel-default' id="11">
+            <div class='panel-heading'>
+  <h4>willeke-vv</h4>
+  <h4 class='small'>
+    posted on March 8, 2016, 12:57 p.m.
+    
+  </h4>
+</div>
+<div class='panel-body'>
+  <p class='lead'>The link to the website of the depression project doesn&#39;t work :( #Depression</p>
+</div>
+
+            <div class='row'>
+              <div class='col-xs-10 col-xs-offset-1'>
+                <ul class='list-group'>
+                  
+                </ul>
+                <form action="/comment/add/" method="post">
+                <input type='hidden' name='csrfmiddlewaretoken' value='zc531bIbsJhuAS6JJ6GWeWu6mzmgVOdr' />
+                  <div class='form-group'>
+                    <input class='form-control' type='text' name='comment' required placeholder="Write your comment here..."/>
+                  </div>
+                  <input type='hidden' name='post_id' value=11 />
+                  <button class='btn btn-default' type='submit'>Submit</button>
+                </form>
+              </div>
+            </div>
+          </div>
+          
+          <div class='panel panel-default' id="10">
+            <div class='panel-heading'>
+  <h4>willeke-vv</h4>
+  <h4 class='small'>
+    posted on March 8, 2016, 11:57 a.m.
+    
+  </h4>
+</div>
+<div class='panel-body'>
+  <p class='lead'>I wrote about Genetic Programming like they do in the depression project of the Network Institute, cool! #Depression</p>
+</div>
+
+<div class='col-xs-10 col-xs-offset-1'>
+  <img class='img-responsive center-block img-rounded' src=/media/index.jpeg/>
+</div>
+
+            <div class='row'>
+              <div class='col-xs-10 col-xs-offset-1'>
+                <ul class='list-group'>
+                  
+                </ul>
+                <form action="/comment/add/" method="post">
+                <input type='hidden' name='csrfmiddlewaretoken' value='zc531bIbsJhuAS6JJ6GWeWu6mzmgVOdr' />
+                  <div class='form-group'>
+                    <input class='form-control' type='text' name='comment' required placeholder="Write your comment here..."/>
+                  </div>
+                  <input type='hidden' name='post_id' value=10 />
+                  <button class='btn btn-default' type='submit'>Submit</button>
+                </form>
+              </div>
+            </div>
+          </div>
+          
+          <div class='panel panel-default' id="9">
+            <div class='panel-heading'>
+  <h4>nicolette</h4>
+  <h4 class='small'>
+    posted on March 8, 2016, 11:33 a.m.
+    
+  </h4>
+</div>
+<div class='panel-body'>
+  <p class='lead'>Too bad the project link to #WomenICT is not really explaining what the Network Institute is doing with this project</p>
+</div>
+
+            <div class='row'>
+              <div class='col-xs-10 col-xs-offset-1'>
+                <ul class='list-group'>
+                  
+                </ul>
+                <form action="/comment/add/" method="post">
+                <input type='hidden' name='csrfmiddlewaretoken' value='zc531bIbsJhuAS6JJ6GWeWu6mzmgVOdr' />
+                  <div class='form-group'>
+                    <input class='form-control' type='text' name='comment' required placeholder="Write your comment here..."/>
+                  </div>
+                  <input type='hidden' name='post_id' value=9 />
+                  <button class='btn btn-default' type='submit'>Submit</button>
+                </form>
+              </div>
+            </div>
+          </div>
+          
+          <div class='panel panel-default' id="8">
+            <div class='panel-heading'>
+  <h4>Laura</h4>
+  <h4 class='small'>
+    posted on March 8, 2016, 11:14 a.m.
+    
+  </h4>
+</div>
+<div class='panel-body'>
+  <p class='lead'>Today is international women&#39;s day! Good to see that the Network Institute has a project concerning #WomenICT </p>
+</div>
+
+            <div class='row'>
+              <div class='col-xs-10 col-xs-offset-1'>
+                <ul class='list-group'>
+                  
+                </ul>
+                <form action="/comment/add/" method="post">
+                <input type='hidden' name='csrfmiddlewaretoken' value='zc531bIbsJhuAS6JJ6GWeWu6mzmgVOdr' />
+                  <div class='form-group'>
+                    <input class='form-control' type='text' name='comment' required placeholder="Write your comment here..."/>
+                  </div>
+                  <input type='hidden' name='post_id' value=8 />
+                  <button class='btn btn-default' type='submit'>Submit</button>
+                </form>
+              </div>
+            </div>
+          </div>
+          
+          <div class='panel panel-default' id="7">
+            <div class='panel-heading'>
+  <h4>Laura</h4>
+  <h4 class='small'>
+    posted on March 7, 2016, 7:34 p.m.
+    
+  </h4>
+</div>
+<div class='panel-body'>
+  <p class='lead'>#Selemca is working on robot Alice, who will fight loneliness of the elderly. Great project with a good cause!</p>
+</div>
+
+            <div class='row'>
+              <div class='col-xs-10 col-xs-offset-1'>
+                <ul class='list-group'>
+                  
+                </ul>
+                <form action="/comment/add/" method="post">
+                <input type='hidden' name='csrfmiddlewaretoken' value='zc531bIbsJhuAS6JJ6GWeWu6mzmgVOdr' />
+                  <div class='form-group'>
+                    <input class='form-control' type='text' name='comment' required placeholder="Write your comment here..."/>
+                  </div>
+                  <input type='hidden' name='post_id' value=7 />
+                  <button class='btn btn-default' type='submit'>Submit</button>
+                </form>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      
+	
+	<!-- Added: list of hashtags-->
+	<div class='col-xs-2'>
+		<p>The following list shows the hashtags that can be used to link a post with a project of the Network Institute.
+		Clicking on the hashtag (if underlined) will show the project description.</p>
+		<ul> 
+		<li><a href="http://research-acumen.eu/" target="_blank">#ACUMEN</a></li>
+		<li><a href="http://agora.cs.vu.nl/" target="_blank">#Agora</a></li>
+		<li><a href="http://disastergovernance.info/" target="_blank">#area</a></li>
+		<li><a href="https://www.esciencecenter.nl/" target="_blank">#BiographyNed</a></li>
+		<li><a href="http://www.ehumanities.nl/computational-humanities/ceda_r/" target="_blank">#CEDA_R</a></li>
+		<li><a href="http://chip.win.tue.nl/home.html" target="_blank">#CHIP</a></li>
+		<li><a href="http://www.conpaas.eu/" target="_blank">#ConPaaS</a></li>
+		<li><a href="http://www.cltl.nl/projects/previous-projects/cornetto/" target="_blank">#Cornetto</a></li>
+		<li>#Cyberchondria</li>
+		<li><a href="http://www.data2semantics.org/" target="_blank">#Data2Semantics</a></li>
+		<li>#Depression</li>
+		<li><a href="http://worldwidesemanticweb.org/" target="_blank">#DownscalingSW</a></li>
+		<li><a href="http://www.cltl.nl/projects/previous-projects/dutchsemcor/" target="_blank">#DutchSemCor</a></li>
+		<li>#DutchShips&amp;Seamen</li>
+		<li><a href="http://ecomeu.info/" target="_blank">#EcomEU</a></li>
+		<li><a href="http://www.ehumanities.nl/computational-humanities/elite-network-shifts/" target="_blank">#EliteNetworkShifts</a></li>
+		<li><a href="http://eurecaproject.eu/" target="_blank">#Eureca</a></li>
+		<li>#EWiDS</li>
+		<li><a href="https://worldplantage.wordpress.com/" target="_blank">#Foroba Blo</a></li>
+		<li>#GLAMMap</li>
+		<li><a href="http://globalwordnet.org/" target="_blank">#GlobalWorldNet</a></li>
+		<li>#GreenICTpractices</li>
+		<li><a href="http://kyoto-project.eu/xmlgroup.iit.cnr.it/kyoto/index.html" target="_blank">#KYOTOProject</a></li>
+		<li><a href="http://ldbcouncil.org/industry/organization/origins" target="_blank">#LDBC</a></li>
+		<li>#MCSD</li>
+		<li>#MechanismsLinguisticBias</li>
+		<li>#METIS</li>
+		<li><a href="http://www.minix3.org/" target="_blank">#Minix3</a></li>
+		<li><a href="https://monaproject.wordpress.com/" target="_blank">#MONA</a></li>
+		<li><a href="http://amsterdamgesturecenter.com/members/" target="_blank">#MSLCG</a></li>
+		<li><a href="http://www.nessi-europe.com/default.aspx?page=home" target="_blank">#NESSI</a></li>
+		<li><a href="http://www.internet-science.eu/" target="_blank">#NetworkExcellenceInternetScience</a></li>
+		<li><a href="http://www.newsreader-project.eu/" target="_blank">#NewsReader</a></li>
+		<li><a href="http://notube.tv/" target="_blank">#NoTube</a></li>
+		<li><a href="http://www.opener-project.eu/" target="_blank">#OpeNER</a></li>
+		<li><a href="http://www.openphacts.org/" target="_blank">#OpenPhacts</a></li>
+		<li>#@PhilosTEI</li>
+		<li><a href="http://www.prestoprime.org/" target="_blank">#PrestoPRIME</a></li>
+		<li><a href="http://www.ehumanities.nl/computational-humanities/the-riddle-of-literary-quality/" target="_blank">#RiddleLiteraryQuality</a></li>
+		<li><a href="http://www.commit-nl.nl/projects/socially-enriched-access-to-linked-cultural-media/" target="_blank">#SEALINCMEDIA</a></li>
+		<li><a href="http://selemca.camera-vu.nl/projects/selemca.html" target="_blank">#Selemca</a></li>
+		<li>#SemanticsHistory</li>
+		<li><a href="http://sina.birzeit.edu/SIERA/" target="_blank">#Siera</a></li>
+		<li><a href="http://stress.few.vu.nl/" target="_blank">#STRESS</a></li>
+		<li>#SPREAD</li>
+		<li>#Text2Politics</li>
+		<li>#FromText2PoliticalPositions</li>
+		<li><a href="http://www.fsw.vu.nl/nl/onderzoek/onderzoeksprogrammas/organisatiewetenschappen/tracking-networks-of-communications/index.aspx" target="_blank">#TrackingNetworksCommunication</a></li>
+		<li><a href="http://www.networkinstitute.org/academy-assistants/aaprojects2012/transcending-or-confining/" target="_blank">#TranscendingConfining</a></li>
+		<li><a href="http://www.ehumanities.nl/computational-humanities/tunes-tales/" target="_blank">#Tunes&amp;Tales </a></li>
+		<li>#ValueIT</li>
+		<li>#VerrijktKoninkrijk</li>
+		<li><a href="http://www.metaphorlab.org/&quot;&quot;" target="_blank">#VISMET</a></li>
+		<li><a href="http://vista-tv.eu/" target="_blank">#ViSTA-TV</a></li>
+		<li><a href="http://mvoices.eu/" target="_blank">#VOICES</a></li>
+		<li><a href="http://w4ra.org/" target="_blank">#W4RA</a></li>
+		<li><a href="https://www.digivaardigdigiveilig.nl/" target="_blank">#WomenICT</a></li>
+		</ul>
+  </div></div>
+
+	<script src="//d3js.org/d3.v3.min.js" charset="utf-8"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script src="/static/social/time.js"></script>
   </body>
 </html>
