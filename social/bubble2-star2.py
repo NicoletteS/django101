@@ -6,33 +6,27 @@ text = ""
 post = False
 date_found = False
 dates = []
+split_text = ""
 
 MONTHS = ['january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'december']
 
-def create_date(line):
-    parted = line.strip().split(',')
-    month = parted[0].split()[2]
-    for i in range(len(MONTHS)):
-        if MONTHS[i] == str(month).lower():
-            month = i + 1
-    day = int(parted[0].split()[3])
-    year = int(parted[1].strip())
-    dates.append([month, day, year])
-    
 for line in input_texts:
     if line.find("<li class='list-group-item'>") != -1:
+        print "found"
         post = True
         text = ""
     if post:
         stripped_line = line.strip().replace("<li class='list-group-item'>", "").replace("</li>", "")
         text += stripped_line
-        #split_text = text.split("-")
+        #split_text = [i.split('-')[0] for i in split_text] 
+        #split_text = [text.split("-", 1)
         #text = split_text[:-1]
-        
+        #print stripped_line
+        #print text
     if line.find("</li>") != -1 and post:
         post = False
         texts.append(text)
-
+#c.close()
 #here we create a csv file with the output of sentiment analysis
 import csv
 import subprocess
