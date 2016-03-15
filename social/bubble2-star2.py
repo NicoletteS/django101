@@ -1,5 +1,5 @@
 #this is needed to convert the source code to a list with the texts
-input_texts = open("htmlcode.txt", "r").readlines()
+input_texts = open("C:/Users/Nicolette/djangogirls/django101/social/htmlcode.txt", "r").readlines()
 #input_texts = open("C:/Users/Laura/Dropbox/Studie spullen/Master/Social Web/htmlcode.txt", "r").readlines()
 texts = []
 text = ""
@@ -38,7 +38,7 @@ import csv
 import subprocess
 import json
 
-c = open("\static\social\data-star.csv", "wb")
+c = open("C:/Users/Nicolette/djangogirls/django101/social/static/social/data-star.csv", "wb")
 csv = csv.writer(c)
 csv.writerow(["Hashtag", "Positive", "Negative", "Neutral", "Day", "Month", "Year"])
 

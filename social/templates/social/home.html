@@ -40,7 +40,7 @@ To give you some guidance; bellow you can post a comment and even add an image t
 	<a class='btn btn-success' href="{% url 'social:bubble' %}">Show bubble chart existing projects</a>
 	<a class='btn btn-success' href="{% url 'social:bubble2' %}">Show bubble chart new projects</a>
         <h1> Write a new post </h1>
-		<h3> Use a hashtag (#) before the project name to indicate you are talking about the project. Use a asterisk (*) before the project name to indicate you are talking about an new project. </h3>
+		<h3> Use a hashtag (#) before the project name to indicate you are talking about the project. Use a asterisk (*) before the project name to indicate you are talking about an new project. Also use these indications in the comments. Otherwise, the comment will not be included in the sentiment analysis. </h3>
         <form action="{% url 'social:add_post' %}" method="post" id='new-post-form' enctype='multipart/form-data'>
         {% csrf_token %}
           <div class='form-group'>
