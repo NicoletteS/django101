@@ -39,7 +39,12 @@ d3.csv('/static/social/data-star.csv', function (error, data) {
 
         map = d3.layout.pack().size(size);
         map.nodes({children: centers});
-
+		
+		var middleX = size[0]/2;
+		for(var i = 0; i < centers.length; i++) {
+			centers[i].x = (centers[i].x - middleX)*2 + middleX;
+		}
+		
         return centers;
     }
 
