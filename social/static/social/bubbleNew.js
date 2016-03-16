@@ -44,7 +44,10 @@ d3.csv('/static/social/data-star.csv', function (error, data) {
 		for(var i = 0; i < centers.length; i++) {
 			centers[i].x = (centers[i].x - middleX)*2 + middleX;
 		}
-		
+		var middleY = size[1]/2;
+		for(var i = 0; i < centers.length; i++) {
+			centers[i].y = (centers[i].y - middleY)*1.3 + middleY;
+		}		
         return centers;
     }
 
