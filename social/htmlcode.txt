@@ -43,7 +43,7 @@ To give you some guidance; bellow you can post a comment and even add an image t
         <h1> Write a new post </h1>
 		<h3> Use a hashtag (#) before the project name to indicate you are talking about the project. Use a asterisk (*) before the project name to indicate you are talking about an new project. Also use these indications in the comments. Otherwise, the comment will not be included in the sentiment analysis. </h3>
         <form action="/post/add/" method="post" id='new-post-form' enctype='multipart/form-data'>
-        <input type='hidden' name='csrfmiddlewaretoken' value='nUA1ZX9DNbKPjuyurDea0h9m5d2RgzjK' />
+        <input type='hidden' name='csrfmiddlewaretoken' value='smuLH6tbfxDACASctHrQkhDmEZoq6qZX' />
           <div class='form-group'>
             <textarea class='form-control'name='text' form='new-post-form' required placeholder="Write your post here..."></textarea> 
           </div>
@@ -63,7 +63,7 @@ To give you some guidance; bellow you can post a comment and even add an image t
   <div class='col-xs-2'>
     <div class='well'>
       <form action="/home/" method="post" id='search-bar'>
-        <input type='hidden' name='csrfmiddlewaretoken' value='nUA1ZX9DNbKPjuyurDea0h9m5d2RgzjK' />
+        <input type='hidden' name='csrfmiddlewaretoken' value='smuLH6tbfxDACASctHrQkhDmEZoq6qZX' />
         <div class='form-group'>
           <input type='text' class='form-control' name='search_terms' required placeholder='Search in posts...'>
         </div>
@@ -91,9 +91,17 @@ To give you some guidance; bellow you can post a comment and even add an image t
               <div class='col-xs-10 col-xs-offset-1'>
                 <ul class='list-group'>
                   
+                  <li class='list-group-item'> 
+                    This indeed sounds like a nice project. Will the *Referencemachine include a language system, or will you let it utter some pre-determined phrased? - Hank (March 15, 2016, 10:01 p.m.) 
+                  </li>
+                  
+                  <li class='list-group-item'> 
+                    Hi, sounds like a funny game! Do you already have an idea how the *ReferenceMachine will determine his mood? - willeke-vv (March 15, 2016, 6:45 p.m.) 
+                  </li>
+                  
                 </ul>
                 <form action="/comment/add/" method="post">
-                <input type='hidden' name='csrfmiddlewaretoken' value='nUA1ZX9DNbKPjuyurDea0h9m5d2RgzjK' />
+                <input type='hidden' name='csrfmiddlewaretoken' value='smuLH6tbfxDACASctHrQkhDmEZoq6qZX' />
                   <div class='form-group'>
                     <input class='form-control' type='text' name='comment' required placeholder="Write your comment here..."/>
                   </div>
@@ -121,6 +129,10 @@ To give you some guidance; bellow you can post a comment and even add an image t
                 <ul class='list-group'>
                   
                   <li class='list-group-item'> 
+                    I am not sure if this project would &#39;resolve&#39; the negative stereotypical views because, if I understand correctly, identifies the sterotypes even further but don&#39;t change the views. Nevertheless it could be helpfull for many purposes. - willeke-vv (March 15, 2016, 6:49 p.m.) 
+                  </li>
+                  
+                  <li class='list-group-item'> 
                     Very nice project. Some researchers in my group also work on stereotypes (Antske Fokkens, Emiel van Miltenburg). - piek (March 14, 2016, 8:54 p.m.) 
                   </li>
                   
@@ -130,7 +142,7 @@ To give you some guidance; bellow you can post a comment and even add an image t
                   
                 </ul>
                 <form action="/comment/add/" method="post">
-                <input type='hidden' name='csrfmiddlewaretoken' value='nUA1ZX9DNbKPjuyurDea0h9m5d2RgzjK' />
+                <input type='hidden' name='csrfmiddlewaretoken' value='smuLH6tbfxDACASctHrQkhDmEZoq6qZX' />
                   <div class='form-group'>
                     <input class='form-control' type='text' name='comment' required placeholder="Write your comment here..."/>
                   </div>
@@ -148,7 +160,7 @@ To give you some guidance; bellow you can post a comment and even add an image t
     posted on March 14, 2016, 9:45 a.m.
     
     <form action="/post/delete/50/" method="post" id='delete-post'>
-      <input type='hidden' name='csrfmiddlewaretoken' value='nUA1ZX9DNbKPjuyurDea0h9m5d2RgzjK' />
+      <input type='hidden' name='csrfmiddlewaretoken' value='smuLH6tbfxDACASctHrQkhDmEZoq6qZX' />
       <button type='submit'title='delete post' class='glyphicon glyphicon-trash pull-right'></button>
     </form>
     
@@ -162,6 +174,10 @@ To give you some guidance; bellow you can post a comment and even add an image t
             <div class='row'>
               <div class='col-xs-10 col-xs-offset-1'>
                 <ul class='list-group'>
+                  
+                  <li class='list-group-item'> 
+                    E-health is an upcomming field right now so i think now is the right time to make *IRIS a succes! - willeke-vv (March 15, 2016, 6:52 p.m.) 
+                  </li>
                   
                   <li class='list-group-item'> 
                     Wow that sounds amazing, I would love such an app! *IRIS - Laura (March 14, 2016, 4:25 p.m.) 
@@ -185,7 +201,7 @@ To give you some guidance; bellow you can post a comment and even add an image t
                   
                 </ul>
                 <form action="/comment/add/" method="post">
-                <input type='hidden' name='csrfmiddlewaretoken' value='nUA1ZX9DNbKPjuyurDea0h9m5d2RgzjK' />
+                <input type='hidden' name='csrfmiddlewaretoken' value='smuLH6tbfxDACASctHrQkhDmEZoq6qZX' />
                   <div class='form-group'>
                     <input class='form-control' type='text' name='comment' required placeholder="Write your comment here..."/>
                   </div>
@@ -225,7 +241,7 @@ To give you some guidance; bellow you can post a comment and even add an image t
                   
                 </ul>
                 <form action="/comment/add/" method="post">
-                <input type='hidden' name='csrfmiddlewaretoken' value='nUA1ZX9DNbKPjuyurDea0h9m5d2RgzjK' />
+                <input type='hidden' name='csrfmiddlewaretoken' value='smuLH6tbfxDACASctHrQkhDmEZoq6qZX' />
                   <div class='form-group'>
                     <input class='form-control' type='text' name='comment' required placeholder="Write your comment here..."/>
                   </div>
@@ -272,7 +288,7 @@ What do you think about the ethical implications of ‘smart’ robots? Do you t
                   
                 </ul>
                 <form action="/comment/add/" method="post">
-                <input type='hidden' name='csrfmiddlewaretoken' value='nUA1ZX9DNbKPjuyurDea0h9m5d2RgzjK' />
+                <input type='hidden' name='csrfmiddlewaretoken' value='smuLH6tbfxDACASctHrQkhDmEZoq6qZX' />
                   <div class='form-group'>
                     <input class='form-control' type='text' name='comment' required placeholder="Write your comment here..."/>
                   </div>
@@ -305,7 +321,7 @@ What do you think about the ethical implications of ‘smart’ robots? Do you t
                   
                 </ul>
                 <form action="/comment/add/" method="post">
-                <input type='hidden' name='csrfmiddlewaretoken' value='nUA1ZX9DNbKPjuyurDea0h9m5d2RgzjK' />
+                <input type='hidden' name='csrfmiddlewaretoken' value='smuLH6tbfxDACASctHrQkhDmEZoq6qZX' />
                   <div class='form-group'>
                     <input class='form-control' type='text' name='comment' required placeholder="Write your comment here..."/>
                   </div>
@@ -334,7 +350,7 @@ What do you think about the ethical implications of ‘smart’ robots? Do you t
                   
                 </ul>
                 <form action="/comment/add/" method="post">
-                <input type='hidden' name='csrfmiddlewaretoken' value='nUA1ZX9DNbKPjuyurDea0h9m5d2RgzjK' />
+                <input type='hidden' name='csrfmiddlewaretoken' value='smuLH6tbfxDACASctHrQkhDmEZoq6qZX' />
                   <div class='form-group'>
                     <input class='form-control' type='text' name='comment' required placeholder="Write your comment here..."/>
                   </div>
@@ -367,7 +383,7 @@ What do you think about the ethical implications of ‘smart’ robots? Do you t
                   
                 </ul>
                 <form action="/comment/add/" method="post">
-                <input type='hidden' name='csrfmiddlewaretoken' value='nUA1ZX9DNbKPjuyurDea0h9m5d2RgzjK' />
+                <input type='hidden' name='csrfmiddlewaretoken' value='smuLH6tbfxDACASctHrQkhDmEZoq6qZX' />
                   <div class='form-group'>
                     <input class='form-control' type='text' name='comment' required placeholder="Write your comment here..."/>
                   </div>
@@ -396,7 +412,7 @@ What do you think about the ethical implications of ‘smart’ robots? Do you t
                   
                 </ul>
                 <form action="/comment/add/" method="post">
-                <input type='hidden' name='csrfmiddlewaretoken' value='nUA1ZX9DNbKPjuyurDea0h9m5d2RgzjK' />
+                <input type='hidden' name='csrfmiddlewaretoken' value='smuLH6tbfxDACASctHrQkhDmEZoq6qZX' />
                   <div class='form-group'>
                     <input class='form-control' type='text' name='comment' required placeholder="Write your comment here..."/>
                   </div>
@@ -433,7 +449,7 @@ What do you think about the ethical implications of ‘smart’ robots? Do you t
                   
                 </ul>
                 <form action="/comment/add/" method="post">
-                <input type='hidden' name='csrfmiddlewaretoken' value='nUA1ZX9DNbKPjuyurDea0h9m5d2RgzjK' />
+                <input type='hidden' name='csrfmiddlewaretoken' value='smuLH6tbfxDACASctHrQkhDmEZoq6qZX' />
                   <div class='form-group'>
                     <input class='form-control' type='text' name='comment' required placeholder="Write your comment here..."/>
                   </div>
@@ -462,7 +478,7 @@ What do you think about the ethical implications of ‘smart’ robots? Do you t
                   
                 </ul>
                 <form action="/comment/add/" method="post">
-                <input type='hidden' name='csrfmiddlewaretoken' value='nUA1ZX9DNbKPjuyurDea0h9m5d2RgzjK' />
+                <input type='hidden' name='csrfmiddlewaretoken' value='smuLH6tbfxDACASctHrQkhDmEZoq6qZX' />
                   <div class='form-group'>
                     <input class='form-control' type='text' name='comment' required placeholder="Write your comment here..."/>
                   </div>
@@ -491,7 +507,7 @@ What do you think about the ethical implications of ‘smart’ robots? Do you t
                   
                 </ul>
                 <form action="/comment/add/" method="post">
-                <input type='hidden' name='csrfmiddlewaretoken' value='nUA1ZX9DNbKPjuyurDea0h9m5d2RgzjK' />
+                <input type='hidden' name='csrfmiddlewaretoken' value='smuLH6tbfxDACASctHrQkhDmEZoq6qZX' />
                   <div class='form-group'>
                     <input class='form-control' type='text' name='comment' required placeholder="Write your comment here..."/>
                   </div>
@@ -524,7 +540,7 @@ What do you think about the ethical implications of ‘smart’ robots? Do you t
                   
                 </ul>
                 <form action="/comment/add/" method="post">
-                <input type='hidden' name='csrfmiddlewaretoken' value='nUA1ZX9DNbKPjuyurDea0h9m5d2RgzjK' />
+                <input type='hidden' name='csrfmiddlewaretoken' value='smuLH6tbfxDACASctHrQkhDmEZoq6qZX' />
                   <div class='form-group'>
                     <input class='form-control' type='text' name='comment' required placeholder="Write your comment here..."/>
                   </div>
@@ -561,7 +577,7 @@ What do you think about the ethical implications of ‘smart’ robots? Do you t
                   
                 </ul>
                 <form action="/comment/add/" method="post">
-                <input type='hidden' name='csrfmiddlewaretoken' value='nUA1ZX9DNbKPjuyurDea0h9m5d2RgzjK' />
+                <input type='hidden' name='csrfmiddlewaretoken' value='smuLH6tbfxDACASctHrQkhDmEZoq6qZX' />
                   <div class='form-group'>
                     <input class='form-control' type='text' name='comment' required placeholder="Write your comment here..."/>
                   </div>
@@ -590,7 +606,7 @@ What do you think about the ethical implications of ‘smart’ robots? Do you t
                   
                 </ul>
                 <form action="/comment/add/" method="post">
-                <input type='hidden' name='csrfmiddlewaretoken' value='nUA1ZX9DNbKPjuyurDea0h9m5d2RgzjK' />
+                <input type='hidden' name='csrfmiddlewaretoken' value='smuLH6tbfxDACASctHrQkhDmEZoq6qZX' />
                   <div class='form-group'>
                     <input class='form-control' type='text' name='comment' required placeholder="Write your comment here..."/>
                   </div>
@@ -619,7 +635,7 @@ What do you think about the ethical implications of ‘smart’ robots? Do you t
                   
                 </ul>
                 <form action="/comment/add/" method="post">
-                <input type='hidden' name='csrfmiddlewaretoken' value='nUA1ZX9DNbKPjuyurDea0h9m5d2RgzjK' />
+                <input type='hidden' name='csrfmiddlewaretoken' value='smuLH6tbfxDACASctHrQkhDmEZoq6qZX' />
                   <div class='form-group'>
                     <input class='form-control' type='text' name='comment' required placeholder="Write your comment here..."/>
                   </div>
@@ -648,7 +664,7 @@ What do you think about the ethical implications of ‘smart’ robots? Do you t
                   
                 </ul>
                 <form action="/comment/add/" method="post">
-                <input type='hidden' name='csrfmiddlewaretoken' value='nUA1ZX9DNbKPjuyurDea0h9m5d2RgzjK' />
+                <input type='hidden' name='csrfmiddlewaretoken' value='smuLH6tbfxDACASctHrQkhDmEZoq6qZX' />
                   <div class='form-group'>
                     <input class='form-control' type='text' name='comment' required placeholder="Write your comment here..."/>
                   </div>
@@ -677,7 +693,7 @@ What do you think about the ethical implications of ‘smart’ robots? Do you t
                   
                 </ul>
                 <form action="/comment/add/" method="post">
-                <input type='hidden' name='csrfmiddlewaretoken' value='nUA1ZX9DNbKPjuyurDea0h9m5d2RgzjK' />
+                <input type='hidden' name='csrfmiddlewaretoken' value='smuLH6tbfxDACASctHrQkhDmEZoq6qZX' />
                   <div class='form-group'>
                     <input class='form-control' type='text' name='comment' required placeholder="Write your comment here..."/>
                   </div>
@@ -706,7 +722,7 @@ What do you think about the ethical implications of ‘smart’ robots? Do you t
                   
                 </ul>
                 <form action="/comment/add/" method="post">
-                <input type='hidden' name='csrfmiddlewaretoken' value='nUA1ZX9DNbKPjuyurDea0h9m5d2RgzjK' />
+                <input type='hidden' name='csrfmiddlewaretoken' value='smuLH6tbfxDACASctHrQkhDmEZoq6qZX' />
                   <div class='form-group'>
                     <input class='form-control' type='text' name='comment' required placeholder="Write your comment here..."/>
                   </div>
@@ -724,7 +740,7 @@ What do you think about the ethical implications of ‘smart’ robots? Do you t
     posted on March 10, 2016, 9:59 a.m.
     
     <form action="/post/delete/6/" method="post" id='delete-post'>
-      <input type='hidden' name='csrfmiddlewaretoken' value='nUA1ZX9DNbKPjuyurDea0h9m5d2RgzjK' />
+      <input type='hidden' name='csrfmiddlewaretoken' value='smuLH6tbfxDACASctHrQkhDmEZoq6qZX' />
       <button type='submit'title='delete post' class='glyphicon glyphicon-trash pull-right'></button>
     </form>
     
@@ -744,7 +760,7 @@ What do you think about the ethical implications of ‘smart’ robots? Do you t
                   
                 </ul>
                 <form action="/comment/add/" method="post">
-                <input type='hidden' name='csrfmiddlewaretoken' value='nUA1ZX9DNbKPjuyurDea0h9m5d2RgzjK' />
+                <input type='hidden' name='csrfmiddlewaretoken' value='smuLH6tbfxDACASctHrQkhDmEZoq6qZX' />
                   <div class='form-group'>
                     <input class='form-control' type='text' name='comment' required placeholder="Write your comment here..."/>
                   </div>
@@ -773,7 +789,7 @@ What do you think about the ethical implications of ‘smart’ robots? Do you t
                   
                 </ul>
                 <form action="/comment/add/" method="post">
-                <input type='hidden' name='csrfmiddlewaretoken' value='nUA1ZX9DNbKPjuyurDea0h9m5d2RgzjK' />
+                <input type='hidden' name='csrfmiddlewaretoken' value='smuLH6tbfxDACASctHrQkhDmEZoq6qZX' />
                   <div class='form-group'>
                     <input class='form-control' type='text' name='comment' required placeholder="Write your comment here..."/>
                   </div>
@@ -802,7 +818,7 @@ What do you think about the ethical implications of ‘smart’ robots? Do you t
                   
                 </ul>
                 <form action="/comment/add/" method="post">
-                <input type='hidden' name='csrfmiddlewaretoken' value='nUA1ZX9DNbKPjuyurDea0h9m5d2RgzjK' />
+                <input type='hidden' name='csrfmiddlewaretoken' value='smuLH6tbfxDACASctHrQkhDmEZoq6qZX' />
                   <div class='form-group'>
                     <input class='form-control' type='text' name='comment' required placeholder="Write your comment here..."/>
                   </div>
@@ -835,7 +851,7 @@ What do you think about the ethical implications of ‘smart’ robots? Do you t
                   
                 </ul>
                 <form action="/comment/add/" method="post">
-                <input type='hidden' name='csrfmiddlewaretoken' value='nUA1ZX9DNbKPjuyurDea0h9m5d2RgzjK' />
+                <input type='hidden' name='csrfmiddlewaretoken' value='smuLH6tbfxDACASctHrQkhDmEZoq6qZX' />
                   <div class='form-group'>
                     <input class='form-control' type='text' name='comment' required placeholder="Write your comment here..."/>
                   </div>
@@ -853,7 +869,7 @@ What do you think about the ethical implications of ‘smart’ robots? Do you t
     posted on March 10, 2016, 9:58 a.m.
     
     <form action="/post/delete/15/" method="post" id='delete-post'>
-      <input type='hidden' name='csrfmiddlewaretoken' value='nUA1ZX9DNbKPjuyurDea0h9m5d2RgzjK' />
+      <input type='hidden' name='csrfmiddlewaretoken' value='smuLH6tbfxDACASctHrQkhDmEZoq6qZX' />
       <button type='submit'title='delete post' class='glyphicon glyphicon-trash pull-right'></button>
     </form>
     
@@ -869,7 +885,7 @@ What do you think about the ethical implications of ‘smart’ robots? Do you t
                   
                 </ul>
                 <form action="/comment/add/" method="post">
-                <input type='hidden' name='csrfmiddlewaretoken' value='nUA1ZX9DNbKPjuyurDea0h9m5d2RgzjK' />
+                <input type='hidden' name='csrfmiddlewaretoken' value='smuLH6tbfxDACASctHrQkhDmEZoq6qZX' />
                   <div class='form-group'>
                     <input class='form-control' type='text' name='comment' required placeholder="Write your comment here..."/>
                   </div>
@@ -898,7 +914,7 @@ What do you think about the ethical implications of ‘smart’ robots? Do you t
                   
                 </ul>
                 <form action="/comment/add/" method="post">
-                <input type='hidden' name='csrfmiddlewaretoken' value='nUA1ZX9DNbKPjuyurDea0h9m5d2RgzjK' />
+                <input type='hidden' name='csrfmiddlewaretoken' value='smuLH6tbfxDACASctHrQkhDmEZoq6qZX' />
                   <div class='form-group'>
                     <input class='form-control' type='text' name='comment' required placeholder="Write your comment here..."/>
                   </div>
@@ -927,7 +943,7 @@ What do you think about the ethical implications of ‘smart’ robots? Do you t
                   
                 </ul>
                 <form action="/comment/add/" method="post">
-                <input type='hidden' name='csrfmiddlewaretoken' value='nUA1ZX9DNbKPjuyurDea0h9m5d2RgzjK' />
+                <input type='hidden' name='csrfmiddlewaretoken' value='smuLH6tbfxDACASctHrQkhDmEZoq6qZX' />
                   <div class='form-group'>
                     <input class='form-control' type='text' name='comment' required placeholder="Write your comment here..."/>
                   </div>
@@ -960,7 +976,7 @@ What do you think about the ethical implications of ‘smart’ robots? Do you t
                   
                 </ul>
                 <form action="/comment/add/" method="post">
-                <input type='hidden' name='csrfmiddlewaretoken' value='nUA1ZX9DNbKPjuyurDea0h9m5d2RgzjK' />
+                <input type='hidden' name='csrfmiddlewaretoken' value='smuLH6tbfxDACASctHrQkhDmEZoq6qZX' />
                   <div class='form-group'>
                     <input class='form-control' type='text' name='comment' required placeholder="Write your comment here..."/>
                   </div>
@@ -989,7 +1005,7 @@ What do you think about the ethical implications of ‘smart’ robots? Do you t
                   
                 </ul>
                 <form action="/comment/add/" method="post">
-                <input type='hidden' name='csrfmiddlewaretoken' value='nUA1ZX9DNbKPjuyurDea0h9m5d2RgzjK' />
+                <input type='hidden' name='csrfmiddlewaretoken' value='smuLH6tbfxDACASctHrQkhDmEZoq6qZX' />
                   <div class='form-group'>
                     <input class='form-control' type='text' name='comment' required placeholder="Write your comment here..."/>
                   </div>
@@ -1018,7 +1034,7 @@ What do you think about the ethical implications of ‘smart’ robots? Do you t
                   
                 </ul>
                 <form action="/comment/add/" method="post">
-                <input type='hidden' name='csrfmiddlewaretoken' value='nUA1ZX9DNbKPjuyurDea0h9m5d2RgzjK' />
+                <input type='hidden' name='csrfmiddlewaretoken' value='smuLH6tbfxDACASctHrQkhDmEZoq6qZX' />
                   <div class='form-group'>
                     <input class='form-control' type='text' name='comment' required placeholder="Write your comment here..."/>
                   </div>
@@ -1047,7 +1063,7 @@ What do you think about the ethical implications of ‘smart’ robots? Do you t
                   
                 </ul>
                 <form action="/comment/add/" method="post">
-                <input type='hidden' name='csrfmiddlewaretoken' value='nUA1ZX9DNbKPjuyurDea0h9m5d2RgzjK' />
+                <input type='hidden' name='csrfmiddlewaretoken' value='smuLH6tbfxDACASctHrQkhDmEZoq6qZX' />
                   <div class='form-group'>
                     <input class='form-control' type='text' name='comment' required placeholder="Write your comment here..."/>
                   </div>
@@ -1080,7 +1096,7 @@ What do you think about the ethical implications of ‘smart’ robots? Do you t
                   
                 </ul>
                 <form action="/comment/add/" method="post">
-                <input type='hidden' name='csrfmiddlewaretoken' value='nUA1ZX9DNbKPjuyurDea0h9m5d2RgzjK' />
+                <input type='hidden' name='csrfmiddlewaretoken' value='smuLH6tbfxDACASctHrQkhDmEZoq6qZX' />
                   <div class='form-group'>
                     <input class='form-control' type='text' name='comment' required placeholder="Write your comment here..."/>
                   </div>
@@ -1109,7 +1125,7 @@ What do you think about the ethical implications of ‘smart’ robots? Do you t
                   
                 </ul>
                 <form action="/comment/add/" method="post">
-                <input type='hidden' name='csrfmiddlewaretoken' value='nUA1ZX9DNbKPjuyurDea0h9m5d2RgzjK' />
+                <input type='hidden' name='csrfmiddlewaretoken' value='smuLH6tbfxDACASctHrQkhDmEZoq6qZX' />
                   <div class='form-group'>
                     <input class='form-control' type='text' name='comment' required placeholder="Write your comment here..."/>
                   </div>
@@ -1138,7 +1154,7 @@ What do you think about the ethical implications of ‘smart’ robots? Do you t
                   
                 </ul>
                 <form action="/comment/add/" method="post">
-                <input type='hidden' name='csrfmiddlewaretoken' value='nUA1ZX9DNbKPjuyurDea0h9m5d2RgzjK' />
+                <input type='hidden' name='csrfmiddlewaretoken' value='smuLH6tbfxDACASctHrQkhDmEZoq6qZX' />
                   <div class='form-group'>
                     <input class='form-control' type='text' name='comment' required placeholder="Write your comment here..."/>
                   </div>
@@ -1167,7 +1183,7 @@ What do you think about the ethical implications of ‘smart’ robots? Do you t
                   
                 </ul>
                 <form action="/comment/add/" method="post">
-                <input type='hidden' name='csrfmiddlewaretoken' value='nUA1ZX9DNbKPjuyurDea0h9m5d2RgzjK' />
+                <input type='hidden' name='csrfmiddlewaretoken' value='smuLH6tbfxDACASctHrQkhDmEZoq6qZX' />
                   <div class='form-group'>
                     <input class='form-control' type='text' name='comment' required placeholder="Write your comment here..."/>
                   </div>
@@ -1185,7 +1201,7 @@ What do you think about the ethical implications of ‘smart’ robots? Do you t
     posted on March 8, 2016, 9:32 p.m.
     
     <form action="/post/delete/13/" method="post" id='delete-post'>
-      <input type='hidden' name='csrfmiddlewaretoken' value='nUA1ZX9DNbKPjuyurDea0h9m5d2RgzjK' />
+      <input type='hidden' name='csrfmiddlewaretoken' value='smuLH6tbfxDACASctHrQkhDmEZoq6qZX' />
       <button type='submit'title='delete post' class='glyphicon glyphicon-trash pull-right'></button>
     </form>
     
@@ -1201,7 +1217,7 @@ What do you think about the ethical implications of ‘smart’ robots? Do you t
                   
                 </ul>
                 <form action="/comment/add/" method="post">
-                <input type='hidden' name='csrfmiddlewaretoken' value='nUA1ZX9DNbKPjuyurDea0h9m5d2RgzjK' />
+                <input type='hidden' name='csrfmiddlewaretoken' value='smuLH6tbfxDACASctHrQkhDmEZoq6qZX' />
                   <div class='form-group'>
                     <input class='form-control' type='text' name='comment' required placeholder="Write your comment here..."/>
                   </div>
@@ -1230,7 +1246,7 @@ What do you think about the ethical implications of ‘smart’ robots? Do you t
                   
                 </ul>
                 <form action="/comment/add/" method="post">
-                <input type='hidden' name='csrfmiddlewaretoken' value='nUA1ZX9DNbKPjuyurDea0h9m5d2RgzjK' />
+                <input type='hidden' name='csrfmiddlewaretoken' value='smuLH6tbfxDACASctHrQkhDmEZoq6qZX' />
                   <div class='form-group'>
                     <input class='form-control' type='text' name='comment' required placeholder="Write your comment here..."/>
                   </div>
@@ -1263,7 +1279,7 @@ What do you think about the ethical implications of ‘smart’ robots? Do you t
                   
                 </ul>
                 <form action="/comment/add/" method="post">
-                <input type='hidden' name='csrfmiddlewaretoken' value='nUA1ZX9DNbKPjuyurDea0h9m5d2RgzjK' />
+                <input type='hidden' name='csrfmiddlewaretoken' value='smuLH6tbfxDACASctHrQkhDmEZoq6qZX' />
                   <div class='form-group'>
                     <input class='form-control' type='text' name='comment' required placeholder="Write your comment here..."/>
                   </div>
@@ -1281,7 +1297,7 @@ What do you think about the ethical implications of ‘smart’ robots? Do you t
     posted on March 8, 2016, 11:33 a.m.
     
     <form action="/post/delete/9/" method="post" id='delete-post'>
-      <input type='hidden' name='csrfmiddlewaretoken' value='nUA1ZX9DNbKPjuyurDea0h9m5d2RgzjK' />
+      <input type='hidden' name='csrfmiddlewaretoken' value='smuLH6tbfxDACASctHrQkhDmEZoq6qZX' />
       <button type='submit'title='delete post' class='glyphicon glyphicon-trash pull-right'></button>
     </form>
     
@@ -1297,7 +1313,7 @@ What do you think about the ethical implications of ‘smart’ robots? Do you t
                   
                 </ul>
                 <form action="/comment/add/" method="post">
-                <input type='hidden' name='csrfmiddlewaretoken' value='nUA1ZX9DNbKPjuyurDea0h9m5d2RgzjK' />
+                <input type='hidden' name='csrfmiddlewaretoken' value='smuLH6tbfxDACASctHrQkhDmEZoq6qZX' />
                   <div class='form-group'>
                     <input class='form-control' type='text' name='comment' required placeholder="Write your comment here..."/>
                   </div>
@@ -1326,7 +1342,7 @@ What do you think about the ethical implications of ‘smart’ robots? Do you t
                   
                 </ul>
                 <form action="/comment/add/" method="post">
-                <input type='hidden' name='csrfmiddlewaretoken' value='nUA1ZX9DNbKPjuyurDea0h9m5d2RgzjK' />
+                <input type='hidden' name='csrfmiddlewaretoken' value='smuLH6tbfxDACASctHrQkhDmEZoq6qZX' />
                   <div class='form-group'>
                     <input class='form-control' type='text' name='comment' required placeholder="Write your comment here..."/>
                   </div>
@@ -1355,7 +1371,7 @@ What do you think about the ethical implications of ‘smart’ robots? Do you t
                   
                 </ul>
                 <form action="/comment/add/" method="post">
-                <input type='hidden' name='csrfmiddlewaretoken' value='nUA1ZX9DNbKPjuyurDea0h9m5d2RgzjK' />
+                <input type='hidden' name='csrfmiddlewaretoken' value='smuLH6tbfxDACASctHrQkhDmEZoq6qZX' />
                   <div class='form-group'>
                     <input class='form-control' type='text' name='comment' required placeholder="Write your comment here..."/>
                   </div>
