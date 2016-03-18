@@ -36,7 +36,8 @@
 	<p> 
 This website contains a forum about project from the Network Institute. Feel free to look around!
 </p><p>
-To give you some guidance; bellow you can post a comment and even add an image to it. Use a hashtag (#) to indicate over which project you are talking about (all projects of the Network Institute are listed on the right of the page, for more information you can click on it). The sentiment of the post on the project is visualized in a bubble chart. You can also introduce a new project! By introducing the project name with a asterisk (i.e. *newidea) you indicate that your post is about a new project and the sentiment bubbles are shown in a different graph where all new projects are introduced. With this graph the sentiment per project can be analyzed. The last feature that is in the website is the timeline above, this timeline indicates how popular the site is by showing how many posts are posted a day so make sure you jack up the number!
+This website contains a forum about projects from the Network Institute. Feel free to look around!
+To give you some guidance, below you can post a comment and optionally add an image to it. Use a hashtag (#) to indicate the project you are talking about (all projects of the Network Institute are listed on the right of the page, you can click on it for more information). The sentiment of the post about the project is visualized in a bubble chart. You can also introduce a new project! By introducing the projectname with an asterisk (e.g. *newidea) you can indicate that your post is about a new project. The sentiment bubbles of the new projects are shown in a different graph where all new projects are introduced. With this graph the sentiment per project can be analyzed. Another feature that is included in the website is the timeline (which can be seen above). This timeline indicates how popular the site is by showing how many posts have been posted on a day, so make sure you jack up the number!
 	</p>
 	<a class='btn btn-success' href="/bubble/">Show bubble chart existing projects</a>
 	<a class='btn btn-success' href="/bubble2/">Show bubble chart new projects</a>
@@ -74,6 +75,40 @@ To give you some guidance; bellow you can post a comment and even add an image t
 	</div>
 
 		        <div class='col-xs-8 col-xs-offset-2'>
+          
+          <div class='panel panel-default' id="53">
+            <div class='panel-heading'>
+  <h4>nicolette</h4>
+  <h4 class='small'>
+    posted on March 18, 2016, 10:08 a.m.
+    
+    <form action="/post/delete/53/" method="post" id='delete-post'>
+      <input type='hidden' name='csrfmiddlewaretoken' value='smuLH6tbfxDACASctHrQkhDmEZoq6qZX' />
+      <button type='submit'title='delete post' class='glyphicon glyphicon-trash pull-right'></button>
+    </form>
+    
+  </h4>
+</div>
+<div class='panel-body'>
+  <p class='lead'>The *CAT project focuses the structure and content of communication networks on Twitter. How do some posts end up to hypes and how does this happen? More information about the project: http://www.networkinstitute.org/wp-content/uploads/2015/07/3.-Cascades-and-Avalanches-in-Twitter-Communication-Networks.pdf</p>
+</div>
+
+            <div class='row'>
+              <div class='col-xs-10 col-xs-offset-1'>
+                <ul class='list-group'>
+                  
+                </ul>
+                <form action="/comment/add/" method="post">
+                <input type='hidden' name='csrfmiddlewaretoken' value='smuLH6tbfxDACASctHrQkhDmEZoq6qZX' />
+                  <div class='form-group'>
+                    <input class='form-control' type='text' name='comment' required placeholder="Write your comment here..."/>
+                  </div>
+                  <input type='hidden' name='post_id' value=53 />
+                  <button class='btn btn-default' type='submit'>Submit</button>
+                </form>
+              </div>
+            </div>
+          </div>
           
           <div class='panel panel-default' id="52">
             <div class='panel-heading'>
@@ -129,11 +164,11 @@ To give you some guidance; bellow you can post a comment and even add an image t
                 <ul class='list-group'>
                   
                   <li class='list-group-item'> 
-                    I am not sure if this project would &#39;resolve&#39; the negative stereotypical views because, if I understand correctly, identifies the sterotypes even further but don&#39;t change the views. Nevertheless it could be helpfull for many purposes. - willeke-vv (March 15, 2016, 6:49 p.m.) 
+                    Very nice project. Some researchers in my group also work on stereotypes (Antske Fokkens, Emiel van Miltenburg). *stereoview - piek (March 18, 2016, 10:14 a.m.) 
                   </li>
                   
                   <li class='list-group-item'> 
-                    Very nice project. Some researchers in my group also work on stereotypes (Antske Fokkens, Emiel van Miltenburg). - piek (March 14, 2016, 8:54 p.m.) 
+                    I am not sure if this project would &#39;resolve&#39; the negative stereotypical views because, if I understand correctly, identifies the sterotypes even further but don&#39;t change the views. Nevertheless it could be helpfull for many purposes. *stereoview - willeke-vv (March 18, 2016, 10:10 a.m.) 
                   </li>
                   
                   <li class='list-group-item'> 
@@ -273,10 +308,6 @@ What do you think about the ethical implications of ‘smart’ robots? Do you t
             <div class='row'>
               <div class='col-xs-10 col-xs-offset-1'>
                 <ul class='list-group'>
-                  
-                  <li class='list-group-item'> 
-                    This is a test *EthicalRobots - nicolette (March 15, 2016, 4:56 p.m.) 
-                  </li>
                   
                   <li class='list-group-item'> 
                     Interesting thought! I am curious what the outcome of the project will bring us *EthicalRobots - Branco (March 14, 2016, 8:37 a.m.) 
